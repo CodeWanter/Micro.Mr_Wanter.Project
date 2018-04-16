@@ -3,6 +3,7 @@ using Micor.Remote.Model;
 using Micro.Mr_Wanter.Common.Filter;
 using Micro.Wanter.Common;
 using PagedList;
+using System;
 using System.Web.Mvc;
 
 namespace Micro.Mr_Wanter.MVC.Controllers

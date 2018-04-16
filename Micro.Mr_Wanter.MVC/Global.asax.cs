@@ -1,4 +1,5 @@
 ﻿using Micro.Es6.Service;
+using Micro.Wanter.Common.Helper;
 using Micro.Wanter.Common.IOCFactory;
 using System;
 using System.Data.Entity;
@@ -19,6 +20,7 @@ namespace Micro.Mr_Wanter.MVC
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            ExcuteBat.Bat("D:\\工作\\elasticsearch\\elasticsearch-2.4.2\\bin\\elasticsearch.bat");//启动es2.4.2服务
             Database.SetInitializer<DbContextEntity>(null);
             ControllerBuilder.Current.SetControllerFactory(new UnityControllerFactory());//替换默认的控制器工厂
         }

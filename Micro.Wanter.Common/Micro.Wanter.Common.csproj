@@ -137,6 +137,7 @@
     <Compile Include="Filter\AuthorityFilter.cs" />
     <Compile Include="Filter\ExceptionFilter.cs" />
     <Compile Include="Helper\DateTimeHelper.cs" />
+    <Compile Include="Helper\ExcuteBat.cs" />
     <Compile Include="Helper\IpHelper.cs" />
     <Compile Include="Log\Logger.cs" />
     <Compile Include="Models\AjaxResult.cs" />
