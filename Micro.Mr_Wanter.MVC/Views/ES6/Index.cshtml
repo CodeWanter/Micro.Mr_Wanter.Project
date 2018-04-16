@@ -1,0 +1,187 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<link href="~/Scripts/Plugin/pagination_zh/lib/pagination.css" rel="stylesheet" />
+<link href="~/Scripts/Plugin/layui-v2.2.5/layui/css/layui.css" rel="stylesheet" />
+<style type="text/css">
+    .tdClass {
+        width: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+</style>
+<hr class="layui-bg-red">
+<div class="container">
+    <div class="row">
+        <div class="span6">
+            <ul class="breadcrumb">
+                <li>
+                    <a href="/">Home</a> <span class="divider">></span>
+                </li>
+                <li>
+                    <a href="/ES6/Index">ES6</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<a href="/ES6/Create" class="layui-btn layui-btn-normal">Create</a>
+<a href="javascript:void(0);" onclick="InitES()" class="layui-btn layui-btn-normal">InitES</a>
+<div class="layui-input-block floatright">
+    <input type="search" id="searchText" lay-verify="title" autocomplete="off" placeholder="请输入检索词" class="layui-input-inline" style="height:33px;" />
+    <input type="submit" class="btn" onclick="ESearch()" />
+    <input type="hidden" id="queryString" value="@ViewBag.queryString" />
+</div>
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>标题</td>
+                <td>出版单位</td>
+                <td>出版地</td>
+                <td>出版日期</td>
+                <td>相关度</td>
+                <td>详情</td>
+                <td>编辑</td>
+                <td>删除</td>
+            </tr>
+        </thead>
+        <tbody id="List"></tbody>
+    </table>
+    <div id="Pagination" class="dataTables_paginate paging_bootstrap pagination center"></div>
+</div>
+@section Scripts{
+    <script src="~/Scripts/Plugin/layui-v2.2.5/layui/layui.js"></script>
+    <script src="~/Scripts/Plugin/jsrender.js"></script>
+    <script src="~/Scripts/respond.js"></script>
+    <script src="~/Scripts/Plugin/pagination_zh/lib/jquery.pagination.js"></script>
+    <script type="text/x-jsrender" id="dataList">
+        <tr>
+            <td class="tdClass"><i>{{:TITLE}}</i></td>
+            <td class="tdClass"><i>{{:PUBLISHER}}</i></td>
+            <td class="tdClass"><i>{{:PUBLISHING_PLACE}}</i></td>
+            <td class="tdClass"><i>{{:PUBLISHING_PERIOD}}</i></td>
+            <td class="tdClass"><i>{{:Score}}</i></td>
+            <td class="tdClass"><a href="/ES6/Detail/{{:ID}}">Detail</a></td>
+            <td class="tdClass"><a href="javascript:void(0)" onclick="Edit({{:ID}})">Edit</a></td>
+            <td class="tdClass"><a href="javascript:void(0)" onclick="Delete({{:ID}})">Delete</a></td>
+        </tr>
+    </script>
+    <script type="text/javascript">
+        var pageIndex = 0;
+        var pageSize = 10;
+        $(function () {
+            $("#searchText").val($("#queryString").val());
+            PaginationInit(pageIndex, pageSize);
+        });
+
+        layui.use('layer', function () {
+            var $ = layui.jquery, layer = layui.layer;
+        });
+
+        function InitES() {
+            var index;
+            $.ajax({
+                type: "POST",
+                url: "/ES6/InitES",
+                dataType: "json",
+                async: true,
+                beforeSend: function () {
+                    index=layer.load();
+                },
+                complete: function () {
+                },
+                success: function (result) {
+                    PaginationInit(pageIndex, pageSize);
+                    layer.close(index);
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert('error...状态文本值：' + textStatus + " 异常信息：" + errorThrown);
+                    layer.msg('保存异常!');
+                }
+            });
+        }
+
+        function ESearch() {
+            var searchText = $("#searchText").val();
+                window.location.href = "/ES6/Index?queryString=" + searchText;
+        }
+
+        function PaginationInit(pageIndex, pageSize) {
+            $.post("/ES6/GetData", { "queryString": $("#queryString").val(), "pageIndex": pageIndex, "pageSize": pageSize }, function (data) {
+                // 创建分页
+                $("#Pagination").pagination(data.TotalCount, {
+                    num_edge_entries: 1, //边缘页数
+                    num_display_entries: 10, //主体页数
+                    callback: paginationCallback, //回调函数
+                    items_per_page: pageSize, //每页显示多少项
+                    prev_text: "<<上一页",
+                    next_text: "下一页>>",
+                    link_to: 'javascript:void(0);'
+                });
+            });
+        }
+
+        function paginationCallback(pageIndex, jq) {
+            $.ajax({
+                type: "POST",
+                url: "/ES6/GetData",
+                data: { "queryString": $("#queryString").val(), "pageIndex": pageIndex, "pageSize": pageSize },
+                dataType: "json",
+                async: true,
+                beforeSend: function () {
+                },
+                complete: function () {
+                },
+                success: function (result) {
+                    $("#List").html("");
+                    var html = $("#dataList").render(result.DataList);
+                    $("#List").append(html);
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert('error...状态文本值：' + textStatus + " 异常信息：" + errorThrown);
+                    layer.msg('保存异常!');
+                }
+            });
+        }
+
+        layui.use('layer', function () {
+            var $ = layui.jquery, layer = layui.layer;
+        });
+
+        function Edit(id) {
+            parent.layer.open({
+                type: 2,
+                title: '数据修改',
+                maxmin: true,
+                shadeClose: true, //点击遮罩关闭层
+                area: ['800px', '520px'],
+                content: '/ES6/Edit/' + id,
+                end: function () {
+                    location.reload();
+                }
+            });
+        }
+
+        function Delete(id) {
+            layer.confirm('确认删除？', {
+                btn: ['yes', '后悔药'] //按钮
+            }, function () {
+                $.post("/ES6/Delete", { id: id }, function (data) {
+                    if (data.result == true) {
+                        layer.msg('---删除成功!---', {
+                            time: 2000, //2s后自动关闭
+                            btn: ['ok']
+                        });
+                        PaginationInit(pageIndex, pageSize);
+                    }
+                });
+            }, function () {
+
+            });
+        }
+    </script>
+}
+

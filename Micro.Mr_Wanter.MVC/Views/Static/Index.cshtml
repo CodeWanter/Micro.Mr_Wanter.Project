@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Scripts/Plugin/layui-v2.2.5/layui/css/layui.css" rel="stylesheet" />
+<hr class="layui-bg-red">
+<div class="container">
+    <div class="row">
+        <div class="span6">
+            <ul class="breadcrumb">
+                <li>
+                    <a href="/">Home</a> <span class="divider">></span>
+                </li>
+                <li>
+                    <a href="/Static/Index">Static</a> 
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="container"></div>
+<script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+<script src="https://img.hcharts.cn/highstock/highstock.js"></script>
+<script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+<script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+<script type="text/javascript">
+var chart = null;
+$.getJSON('/Static/GetData', function (data) {
+    Highcharts.stockChart('container', {
+        rangeSelector: {
+            selected: 2
+        },
+        title: {
+            text: '历史薪资'
+        },
+        plotOptions: {
+            series: {
+                showInLegend: true
+            }
+        },
+        tooltip: {
+            split: false,
+            shared: true
+        },
+        series: [ {
+            // type: 'line',
+            id: '000001',
+            name: '应发薪资',
+            data: data.t_data
+        },{
+            // type: 'line',
+            id: '000002',
+            name: '实发薪资',
+            data: data.f_data
+        }]
+    });
+});
+</script>

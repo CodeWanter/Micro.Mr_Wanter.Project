@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header class="header-area2">
+        <div class="header-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 col-sm-8 col-xs-12">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="~/Content/assets/images/logo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-8 hidden-sm hidden-xs">
+                        <div class="mainmenu text-right">
+                            <ul id="navigation">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/Salary/index">Salary</a></li>
+                                <li><a href="/Static/Index">Static</a></li>
+                                <li><a href="/Home/Contact">Elastic1</a></li>
+                                <li><a href="/ES6/index">Elastic2</a></li>
+                                <li><a href="~/Html/Mark.html" target="_blank">Mark</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-9">
+                        @Html.Partial("_LoginPartial")
+                    </div>
+                        <div class="col-sm-1 clear col-xs-3 hidden-md hidden-lg">
+                            <div class="responsive-menu-wrap floatright"></div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </header>
+    <div class="container body-content">
+        <div style="min-height:755px;margin-bottom:32px;">
+            @RenderBody()
+        </div>
+    </div>
+    <footer class="footer-area">
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="copyright text-right">
+                        <p>Copyright &copy; 2018.Mr.Zhang All rights reserved.<a target="_blank" href="https://blog.csdn.net/mr_wanter">MY BOLG</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

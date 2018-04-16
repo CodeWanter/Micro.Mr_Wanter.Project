@@ -1,0 +1,232 @@
+﻿@model Micro.Wanter.Model.S_User
+@{
+    ViewBag.Title = "登录";
+}
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<!--<![endif]-->
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+<meta name="author" content="Mr_Wanter" />
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="stylesheet" type="text/css" href="~/Content/loginCss/demo.css" />
+<link rel="stylesheet" type="text/css" href="~/Content/loginCss/style.css" />
+<link rel="stylesheet" type="text/css" href="~/Content/loginCss/animate-custom.css" />
+<link href="~/Scripts/Plugin/layui-v2.2.5/layui/css/layui.css" rel="stylesheet" />
+<style type="text/css">
+    label.error {
+        color: red !important;
+        margin: 15px;
+    }
+</style>
+
+<hr class="layui-bg-red">
+<div class="container">
+    <div class="row">
+        <div class="span6">
+            <ul class="breadcrumb">
+                <li>
+                    <a href="/">Home</a> <span class="divider">></span>
+                </li>
+                <li>
+                    <a href="/Account/Login">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="container_demo">
+    <a class="hiddenanchor" id="toregister"></a>
+    <a class="hiddenanchor" id="tologin"></a>
+    <div id="wrapper">
+        <div id="login" class="animate form">
+            <form id="loginForm" action="/Account/Login" method="post" autocomplete="on">
+                <h1>Log in</h1>
+                <div  style="color:red;text-align:center;"><b>@Html.ValidationMessage("failed")</b></div>
+                <p>
+                    <label for="userName" class="uname" data-icon="u"> Your email or username </label>
+                    @if (Model != null)
+                    {
+                        <input id="userName" name="userName" required="required" type="text" value="@Model.UserName" placeholder="myusername or mymail@mail.com" />
+                    }
+                    else
+                    {
+                        <input id="userName" name="userName" required="required" type="text" placeholder="myusername or mymail@mail.com" />
+                    }
+                    <span></span>
+                </p>
+                <p>
+                    <label for="userPsw" class="youpasswd" data-icon="p"> Your password </label>
+                    @if (Model != null)
+                    {
+                        <input id="userPsw" name="userPsw" required="required" type="password" value="" placeholder="eg. X8df!90EO" />
+                    }
+                    else
+                    {
+                        <input id="userPsw" name="userPsw" required="required" type="password" placeholder="eg. X8df!90EO" />
+                    }
+                    <span></span>
+                </p>
+                <p>
+                    <div id="VerifyCode">
+                        @Html.Image("/Account/VerifyCode", "验证码图片", "点击刷新", new { onclick = "refresh(this)", width = "300", height = "30" }, "img")
+                        <br />
+                        <br />
+                        <input type="text" id="verify" name="verify" style="width:130px;" /><span></span>
+                    </div>
+                </p>
+                <p class="keeplogin">
+                    @if (Model!= null)
+                    {
+                        <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" checked="checked" />
+                    }
+                    else
+                    {
+                        <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
+                    }
+                    <label for="loginkeeping">Keep my information</label>
+                </p>
+                <p class="login button">
+                    <input type="submit" value="Login" />
+                </p>
+                <p class="change_link">
+                    Not a member yet ?
+                    <a href="#toregister" class="to_register">Join us</a>
+                </p>
+            </form>
+        </div>
+        <div id="register" class="animate form">
+            <form action="/Account/Register" autocomplete="on" id="regForm">
+                <h1> Sign up </h1>
+                <p>
+                    <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
+                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
+                    <span></span>
+                </p>
+                <p>
+                    <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
+                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO" />
+                    <span></span>
+                </p>
+                <p>
+                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
+                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO" />
+                    <span></span>
+                </p>
+                <p class="signin button">
+                    <input type="submit" value="Sign up" />
+                </p>
+                <p class="change_link">
+                    Already a member ?
+                    <a href="#tologin" class="to_register"> Go and log in </a>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        //表单验证
+        $(function () {
+
+            $("#userPsw").val("@Model.Password");
+
+            $("#regForm").validate({
+                errorPlacement: function (error, element) {
+                    $(".field-validation-error").hide();
+                    error.appendTo(element.next("span"));
+                },
+                submitHandler: function (form) {
+                    form.submit();
+                },
+                rules: {
+                    usernamesignup: {
+                        required: true,
+                        remote: {
+                            type: "post",
+                            url: "/Account/CheckUserName",
+                            data: { usernamesignup: function () { return $("#usernamesignup").val(); } },
+                            dataType: "html",
+                            dataFilter: function (data, type) {
+                                if (data == "False") {
+                                    return true;
+                                } else {
+                                    return false;
+                                }
+                            }
+                        }
+                    },
+                    passwordsignup: {
+                        required: true,
+                    },
+                    passwordsignup_confirm: {
+                        required: true,
+                        equalTo: "#passwordsignup"
+                    }
+                },
+                messages: {
+                    usernamesignup: {
+                        required: "用户名不能为空",
+                        remote: "用户名已存在，请重新输入"
+                    },
+                    passwordsignup: "密码不能为空",
+                    passwordsignup_confirm: {
+                        required: "*请输入确认密码",
+                        equalTo: "*请再次输入相同的值"
+                    }
+                }
+            })
+
+            $("#loginForm").validate({
+                errorPlacement: function (error, element) {
+                    $(".field-validation-error").hide();
+                    error.appendTo(element.next("span"));
+                },
+                submitHandler: function (form) {
+                    form.submit();
+                },
+                rules: {
+                    userName: "required",
+                    userPsw: {
+                        required: true,
+                    },
+                    verify: {
+                        required: true,
+                        remote: {
+                            type: "post",
+                            url: "/Account/ValidateCode",
+                            data: { code: function () { return $("#verify").val(); } },
+                            dataType: "html",
+                            dataFilter: function (data, type) {
+                                if (data == "True") {
+                                    return true;
+                                } else {
+                                    return false;
+                                }
+                            }
+                        }
+                    }
+                },
+                messages: {
+                    userName: "用户名不能为空",
+                    userPsw: {
+                        required: "密码不能为空"
+                    },
+                    verify: {
+                        required: "验证码不能为空",
+                        remote: "验证码不正确，请重新输入"
+                    }
+                }
+            })
+        })
+
+        function refresh(obj) {
+            $(obj).attr("src", "/Account/VerifyCode?random=" + Math.random());
+        }
+    </script>
+}

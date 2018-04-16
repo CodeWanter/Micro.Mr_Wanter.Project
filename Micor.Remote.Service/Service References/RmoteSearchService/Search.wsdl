@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Search" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8055/Search.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8055/Search.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISearch_Analyzer_InputMessage">
+    <wsdl:part name="parameters" element="tns:Analyzer" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_Analyzer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AnalyzerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_PartialUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:PartialUpdate" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_PartialUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PartialUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_Count_InputMessage">
+    <wsdl:part name="parameters" element="tns:Count" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_Count_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_EsSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:EsSearch" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_EsSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EsSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_EsTermSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:EsTermSearch" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_EsTermSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EsTermSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_FacetsSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:FacetsSearch" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_FacetsSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FacetsSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_GetFiveElement_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFiveElement" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_GetFiveElement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFiveElementResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_GetMoreLikeThis_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMoreLikeThis" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_GetMoreLikeThis_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMoreLikeThisResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_GetPageMoreLikeThis_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPageMoreLikeThis" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_GetPageMoreLikeThis_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPageMoreLikeThisResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_IndexMappingGet_InputMessage">
+    <wsdl:part name="parameters" element="tns:IndexMappingGet" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_IndexMappingGet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IndexMappingGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_SingleGet_InputMessage">
+    <wsdl:part name="parameters" element="tns:SingleGet" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_SingleGet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SingleGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_RecommendWhose_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecommendWhose" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_RecommendWhose_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecommendWhoseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_KnowledgeTrendAnalysis_InputMessage">
+    <wsdl:part name="parameters" element="tns:KnowledgeTrendAnalysis" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_KnowledgeTrendAnalysis_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KnowledgeTrendAnalysisResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="ISearch_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISearch">
+    <wsdl:operation name="Analyzer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISearch/Analyzer" message="tns:ISearch_Analyzer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISearch/AnalyzerResponse" message="tns:ISearch_Analyzer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PartialUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISearch/PartialUpdate" message="tns:ISearch_PartialUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISearch/PartialUpdateResponse" message="tns:ISearch_PartialUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Count">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISearch/Count" message="tns:ISearch_Count_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISearch/CountResponse" message="tns:ISearch_Count_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EsSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISearch/EsSearch" message="tns:ISearch_EsSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISearch/EsSearchResponse" message="tns:ISearch_EsSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EsTermSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISearch/EsTermSearch" message="tns:ISearch_EsTermSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISearch/EsTermSearchResponse" message="tns:ISearch_EsTermSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FacetsSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISearch/FacetsSearch" message="tns:ISearch_FacetsSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISearch/FacetsSearchResponse" message="tns:ISearch_FacetsSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFiveElement">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISearch/GetFiveElement" message="tns:ISearch_GetFiveElement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISearch/GetFiveElementResponse" message="tns:ISearch_GetFiveElement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMoreLikeThis">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISearch/GetMoreLikeThis" message="tns:ISearch_GetMoreLikeThis_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISearch/GetMoreLikeThisResponse" message="tns:ISearch_GetMoreLikeThis_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPageMoreLikeThis">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISearch/GetPageMoreLikeThis" message="tns:ISearch_GetPageMoreLikeThis_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISearch/GetPageMoreLikeThisResponse" message="tns:ISearch_GetPageMoreLikeThis_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IndexMappingGet">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISearch/IndexMappingGet" message="tns:ISearch_IndexMappingGet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISearch/IndexMappingGetResponse" message="tns:ISearch_IndexMappingGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SingleGet">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISearch/SingleGet" message="tns:ISearch_SingleGet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISearch/SingleGetResponse" message="tns:ISearch_SingleGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecommendWhose">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISearch/RecommendWhose" message="tns:ISearch_RecommendWhose_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISearch/RecommendWhoseResponse" message="tns:ISearch_RecommendWhose_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KnowledgeTrendAnalysis">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISearch/KnowledgeTrendAnalysis" message="tns:ISearch_KnowledgeTrendAnalysis_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISearch/KnowledgeTrendAnalysisResponse" message="tns:ISearch_KnowledgeTrendAnalysis_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISearch/Delete" message="tns:ISearch_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISearch/DeleteResponse" message="tns:ISearch_Delete_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISearch" type="tns:ISearch">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Analyzer">
+      <soap:operation soapAction="http://tempuri.org/ISearch/Analyzer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PartialUpdate">
+      <soap:operation soapAction="http://tempuri.org/ISearch/PartialUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Count">
+      <soap:operation soapAction="http://tempuri.org/ISearch/Count" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EsSearch">
+      <soap:operation soapAction="http://tempuri.org/ISearch/EsSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EsTermSearch">
+      <soap:operation soapAction="http://tempuri.org/ISearch/EsTermSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FacetsSearch">
+      <soap:operation soapAction="http://tempuri.org/ISearch/FacetsSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFiveElement">
+      <soap:operation soapAction="http://tempuri.org/ISearch/GetFiveElement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMoreLikeThis">
+      <soap:operation soapAction="http://tempuri.org/ISearch/GetMoreLikeThis" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPageMoreLikeThis">
+      <soap:operation soapAction="http://tempuri.org/ISearch/GetPageMoreLikeThis" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IndexMappingGet">
+      <soap:operation soapAction="http://tempuri.org/ISearch/IndexMappingGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SingleGet">
+      <soap:operation soapAction="http://tempuri.org/ISearch/SingleGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecommendWhose">
+      <soap:operation soapAction="http://tempuri.org/ISearch/RecommendWhose" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KnowledgeTrendAnalysis">
+      <soap:operation soapAction="http://tempuri.org/ISearch/KnowledgeTrendAnalysis" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/ISearch/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Search">
+    <wsdl:port name="BasicHttpBinding_ISearch" binding="tns:BasicHttpBinding_ISearch">
+      <soap:address location="http://localhost:8055/Search.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

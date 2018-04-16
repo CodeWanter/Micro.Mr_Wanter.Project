@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+<link href="~/Scripts/Plugin/layui-v2.2.5/layui/css/layui.css" rel="stylesheet" />
+<link href="~/Scripts/Plugin/layui-v2.2.5/layui/css/modules/laydate/default/laydate.css" rel="stylesheet" />
+
+<hr class="layui-bg-red">
+
+<div class="container">
+    <div class="row">
+        <div class="span6">
+            <ul class="breadcrumb">
+                <li>
+                    <a href="/">Home</a> <span class="divider">></span>
+                </li>
+                <li>
+                    <a href="/Salary/Index">Salary</a><span class="divider">></span>
+                </li>
+                <a href="#">Create</a>
+            </ul>
+        </div>
+    </div>
+</div>
+<form class="layui-form layui-form-pane" action="/Salary/Create" method="post">
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">应发工资</label>
+            <div class="layui-input-inline">
+                <input type="text" name="TotalSalary" lay-verify="required|number" autocomplete="off" class="layui-input">
+            </div>
+            <label class="layui-form-label">实发工资</label>
+            <div class="layui-input-inline">
+                <input type="text" name="FinalSalary" lay-verify="required|number" autocomplete="off" class="layui-input">
+            </div>
+            <label class="layui-form-label">公积金</label>
+            <div class="layui-input-inline">
+                <input type="text" name="AccumulationFund" lay-verify="required|number" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-inline">
+            <label class="layui-form-label">扣款合计</label>
+            <div class="layui-input-inline">
+                <input type="text" name="DeductedSalary" lay-verify="required|number" autocomplete="off" class="layui-input">
+            </div>
+            <label class="layui-form-label">请假扣款</label>
+            <div class="layui-input-inline">
+                <input type="text" name="LeaveSalary" lay-verify="required|number" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">日期</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" id="SalaryTime" name="SalaryTime" placeholder="yyyy-MM-dd" lay-verify="required|date">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">所在公司</label>
+        <div class="layui-input-block">
+            <input type="text" name="Company" lay-verify="required" autocomplete="off" placeholder="请输入公司名称" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">备注</label>
+        <div class="layui-input-block">
+            <textarea class="layui-textarea layui-hide" name="Summary" lay-verify="content" id="LAY_demo_editor"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+@section Scripts{
+<script src="~/Scripts/Plugin/layui-v2.2.5/layui/lay/modules/laydate.js"></script>
+    <script src="~/Scripts/Plugin/layui-v2.2.5/layui/layui.js"></script>
+    <script type="text/javascript">
+        layui.use('form', function () {
+            var form = layui.form; //只有执行了这一步，部分表单元素才会自动修饰成功
+            form.render();
+        });
+
+        layui.use('layedit', function () {
+            var layedit = layui.layedit;
+            layedit.build('LAY_demo_editor'); //建立编辑器
+        });
+        laydate.render({
+            elem: '#SalaryTime' //指定元素
+        });
+        $(function(){
+            if(@ViewBag.status=="error"){
+                layer.msg('提交失败', {
+                    time: 20000, //20s后自动关闭
+                    btn: ['哦']
+                });
+            }
+        });
+    </script>
+}
+

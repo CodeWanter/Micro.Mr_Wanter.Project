@@ -1,0 +1,70 @@
+﻿@model Micro.Wanter.Model.Salary
+@{
+    ViewBag.Title = "Detail";
+}
+<link href="~/Scripts/Plugin/layui-v2.2.5/layui/css/layui.css" rel="stylesheet" />
+<hr class="layui-bg-red">
+<div class="container">
+    <div class="row">
+        <div class="span6">
+            <ul class="breadcrumb">
+                <li>
+                    <a href="/">Home</a> <span class="divider">></span>
+                </li>
+                <li>
+                    <a href="/Salary/Index">Salary</a> <span class="divider">></span>
+                </li>
+                <li class="active">@Model.SalaryTime.ToString("yyyy-MM-dd") 工资</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<blockquote class="layui-elem-quote layui-quote-nm">
+    清酒红人面，财帛动人心
+</blockquote>
+
+<table class="table table-hover table-condensed">
+    <thead style="background-color:#1489fc;font-size:18px;color:white">
+        <tr>
+            <td><strong>明细:</strong></td>
+            <td><strong>金额/内容</strong></td>
+        </tr>
+    </thead>
+    <tr>
+        <td><strong>应发工资:</strong></td>
+        <td><i>@Model.TotalSalary ￥</i></td>
+    </tr>
+    <tr>
+        <td><strong>实发工资:</strong></td>
+        <td><i>@Model.FinalSalary ￥</i></td>
+    </tr>
+    <tr>
+        <td><strong>扣款合计:</strong></td>
+        <td><i>@Model.DeductedSalary ￥</i></td>
+    <tr>
+        <td><strong>请假扣款:</strong></td>
+        <td><i>@Model.LeaveSalary ￥</i></td>
+    </tr>
+    <tr>
+        <td><strong>公积金:</strong></td>
+        <td><i>@Model.AccumulationFund ￥</i>(x2)</td>
+    </tr>
+    <tr>
+        <td><strong>日期:</strong></td>
+        <td>@Model.SalaryTime.ToString("yyyy-MM-dd") </td>
+    </tr>
+    <tr>
+        <td><strong>所在公司:</strong></td>
+        <td>@Model.Company</td>
+    </tr>
+    <tr>
+        <td><strong>录入日期:</strong></td>
+        <td>@Model.CreateTime.ToString("yyyy-MM-dd") </td>
+    </tr>
+    <tr>
+        <td><strong>备注:</strong></td>
+        <td>@Html.Raw(Model.Summary) </td>
+    </tr>
+</table>
+

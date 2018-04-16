@@ -1,0 +1,74 @@
+﻿@model  Micro.Es6.Model.MainRCJournalInfo
+@{
+    ViewBag.Title = "Edit";
+    Layout = null;
+}
+<link href="~/Scripts/Plugin/layui-v2.2.5/layui/css/layui.css" rel="stylesheet" />
+<form class="layui-form layui-form-pane" id="modifyForm" >
+    <input type="hidden" value="@Model.ID" name="id" />
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">标题</label>
+            <div class="layui-input-inline">
+                <input type="text" name="TITLE" lay-verify="required" autocomplete="off" class="layui-input" value="@Model.TITLE">
+            </div>
+            <label class="layui-form-label">出版单位</label>
+            <div class="layui-input-inline">
+                <input type="text" name="PUBLISHER" lay-verify="required" autocomplete="off" class="layui-input" value="@Model.PUBLISHER">
+            </div>
+        </div>
+
+        <div class="layui-inline">
+            <label class="layui-form-label">出版地</label>
+            <div class="layui-input-inline">
+                <input type="text" name="PUBLISHING_PLACE" lay-verify="required" autocomplete="off" class="layui-input" value="@Model.PUBLISHING_PLACE">
+            </div>
+            <label class="layui-form-label">出版日期</label>
+            <div class="layui-input-inline">
+                <input type="text" name="PUBLISHING_PERIOD" lay-verify="required" autocomplete="off" class="layui-input" value="@Model.PUBLISHING_PERIOD">
+            </div>
+        </div>
+    </div>
+   <div class="layui-form-item">
+        <div class="layui-input-block text-center">
+            <button class="layui-btn" lay-submit="" lay-filter="demo1" id="sumitBtn">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/Plugin/kindeditor-4.1.10/lang/zh_CN.js"></script>
+<script src="~/Scripts/Plugin/layui-v2.2.5/layui/layui.js"></script>
+
+<script type="text/javascript">
+    var form;
+    var editIndex;
+    window.onload = function () {
+        layui.use(['form'], function () {
+            form = layui.form; //只有执行了这一步，部分表单元素才会自动修饰成功
+            form.render();
+        });
+    }
+
+    document.getElementById('sumitBtn').onclick = function () {
+        $.ajax({
+            type: "post",
+            url: "/ES6/Edit",
+            data: $('#modifyForm').serialize(),
+            success: function (data) {
+                if (data.result == true) {
+                    layer.msg('修改成功');
+                    var index = parent.layer.getFrameIndex(window.name);
+                    parent.layer.close(index);
+                } else {
+                    layer.msg('修改异常!');
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                layer.msg(XMLHttpRequest.status);
+                layer.msg(XMLHttpRequest.readyState);
+                layer.msg(textStatus);
+            }
+        });
+    }
+</script>

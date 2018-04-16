@@ -1,0 +1,1083 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{44ACB947-78CD-4DCB-A60A-C3D38EBBF0C2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Micro.Mr_Wanter.MVC</RootNamespace>
+    <AssemblyName>Micro.Mr_Wanter.MVC</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.7.3\lib\net46\CommonServiceLocator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elasticsearch.Net, Version=2.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elasticsearch.Net.2.4.2\lib\net46\Elasticsearch.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Nest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
+      <HintPath>..\packages\NEST.2.4.2\lib\net46\Nest.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Unity.Abstractions, Version=3.3.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.7.3\lib\net46\Unity.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Unity.Configuration, Version=5.2.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.7.3\lib\net46\Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.7.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.7.3\lib\net46\Unity.Container.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.5.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.7.3\lib\net46\Unity.Interception.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Unity.Interception.Configuration, Version=5.1.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.7.3\lib\net46\Unity.Interception.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Unity.RegistrationByConvention, Version=2.1.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.7.3\lib\net46\Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Unity.ServiceLocation, Version=2.1.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.7.3\lib\net46\Unity.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ES6Controller.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SalaryController.cs" />
+    <Compile Include="Controllers\StaticController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\Plugin\kindeditor-4.1.10\attached\UploadImage.ashx.cs">
+      <DependentUpon>UploadImage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Plugin\kindeditor-4.1.10\attached\upload_json.ashx.cs">
+      <DependentUpon>upload_json.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\Plugin\layui-v2.2.5\layui\server\editimgup.ashx.cs">
+      <DependentUpon>editimgup.ashx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\assets\css\animate.css" />
+    <Content Include="Content\assets\css\bootstrap.min.css" />
+    <Content Include="Content\assets\css\flaticon.css" />
+    <Content Include="Content\assets\css\font-awesome.min.css" />
+    <Content Include="Content\assets\css\magnific-popup.css" />
+    <Content Include="Content\assets\css\owl.carousel.css" />
+    <Content Include="Content\assets\css\responsive.css" />
+    <Content Include="Content\assets\css\slicknav.min.css" />
+    <Content Include="Content\assets\css\styles.css" />
+    <Content Include="Content\assets\images\about.jpg" />
+    <Content Include="Content\assets\images\about.png" />
+    <Content Include="Content\assets\images\about\1.jpg" />
+    <Content Include="Content\assets\images\bg\1.png" />
+    <Content Include="Content\assets\images\blog\1.jpg" />
+    <Content Include="Content\assets\images\blog\2.jpg" />
+    <Content Include="Content\assets\images\blog\3.jpg" />
+    <Content Include="Content\assets\images\brand\1.jpg" />
+    <Content Include="Content\assets\images\brand\1.png" />
+    <Content Include="Content\assets\images\brand\2.png" />
+    <Content Include="Content\assets\images\brand\3.png" />
+    <Content Include="Content\assets\images\brand\4.png" />
+    <Content Include="Content\assets\images\case\1.1.png" />
+    <Content Include="Content\assets\images\case\1.png" />
+    <Content Include="Content\assets\images\case\2.2.png" />
+    <Content Include="Content\assets\images\case\2.png" />
+    <Content Include="Content\assets\images\case\3.3.png" />
+    <Content Include="Content\assets\images\case\3.png" />
+    <Content Include="Content\assets\images\footer-logo.png" />
+    <Content Include="Content\assets\images\logo.png" />
+    <Content Include="Content\assets\images\service\1.png" />
+    <Content Include="Content\assets\images\service\2.png" />
+    <Content Include="Content\assets\images\service\3.png" />
+    <Content Include="Content\assets\images\slider\1.jpg" />
+    <Content Include="Content\assets\images\slider\2.jpg" />
+    <Content Include="Content\assets\images\team\1.jpg" />
+    <Content Include="Content\assets\images\team\2.jpg" />
+    <Content Include="Content\assets\images\team\3.jpg" />
+    <Content Include="Content\assets\images\testmonial\1.jpg" />
+    <Content Include="Content\assets\images\testmonial\2.jpg" />
+    <Content Include="Content\assets\js\bootstrap.min.js" />
+    <Content Include="Content\assets\js\counterup.main.js" />
+    <Content Include="Content\assets\js\imagesloaded.pkgd.min.js" />
+    <Content Include="Content\assets\js\isotope.pkgd.min.js" />
+    <Content Include="Content\assets\js\jquery.magnific-popup.min.js" />
+    <Content Include="Content\assets\js\jquery.particleground.min.js" />
+    <Content Include="Content\assets\js\jquery.slicknav.min.js" />
+    <Content Include="Content\assets\js\jquery.waypoints.min.js" />
+    <Content Include="Content\assets\js\owl.carousel.min.js" />
+    <Content Include="Content\assets\js\plugins.js" />
+    <Content Include="Content\assets\js\scripts.js" />
+    <Content Include="Content\assets\js\vendor\jquery-1.12.4.min.js" />
+    <Content Include="Content\assets\js\vendor\modernizr-2.8.3.min.js" />
+    <Content Include="Content\assets\js\wow.min.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\loginCss\animate-custom.css" />
+    <Content Include="Content\loginCss\demo.css" />
+    <Content Include="Content\loginCss\style.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Html\Mark.html" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CfgFiles\Unity.Config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.woff2" />
+    <None Include="CfgFiles\log4net.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Common\Common.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\highcharts.css" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\highcharts-3d.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\highcharts-3d.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\highcharts-more.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\highcharts-more.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\highcharts.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\highcharts.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\accessibility.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\accessibility.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\annotations.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\annotations.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\boost-canvas.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\boost-canvas.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\boost.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\boost.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\broken-axis.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\broken-axis.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\bullet.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\bullet.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\data.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\data.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\drag-panes.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\drag-panes.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\drilldown.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\drilldown.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\export-data.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\export-data.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\exporting.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\exporting.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\funnel.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\funnel.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\gantt.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\gantt.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\grid-axis.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\grid-axis.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\heatmap.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\heatmap.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\histogram-bellcurve.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\histogram-bellcurve.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\item-series.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\item-series.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\no-data-to-display.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\no-data-to-display.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\offline-exporting.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\offline-exporting.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\oldie.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\oldie.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\overlapping-datalabels.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\overlapping-datalabels.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\parallel-coordinates.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\parallel-coordinates.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\pareto.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\pareto.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\sankey.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\sankey.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\series-label.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\series-label.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\solid-gauge.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\solid-gauge.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\static-scale.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\static-scale.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\stock.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\stock.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\streamgraph.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\streamgraph.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\sunburst.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\sunburst.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\tilemap.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\tilemap.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\treemap.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\treemap.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\variable-pie.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\variable-pie.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\variwide.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\variwide.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\vector.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\vector.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\windbarb.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\windbarb.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\wordcloud.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\wordcloud.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\xrange.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\xrange.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\avocado.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\avocado.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\dark-blue.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\dark-blue.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\dark-green.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\dark-green.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\dark-unica.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\dark-unica.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\gray.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\gray.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\grid-light.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\grid-light.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\grid.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\grid.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\sand-signika.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\sand-signika.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\skies.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\skies.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\sunset.js" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\sunset.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\highcharts-3d.js" />
+    <Content Include="Scripts\Plugin\highcharts\highcharts-3d.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\highcharts-more.js" />
+    <Content Include="Scripts\Plugin\highcharts\highcharts-more.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\highcharts.js" />
+    <Content Include="Scripts\Plugin\highcharts\highcharts.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\lib\canvg.js" />
+    <Content Include="Scripts\Plugin\highcharts\lib\canvg.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\lib\jspdf.js" />
+    <Content Include="Scripts\Plugin\highcharts\lib\jspdf.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\lib\rgbcolor.js" />
+    <Content Include="Scripts\Plugin\highcharts\lib\rgbcolor.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\lib\svg2pdf.js" />
+    <Content Include="Scripts\Plugin\highcharts\lib\svg2pdf.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\accessibility.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\accessibility.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\annotations.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\annotations.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\boost-canvas.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\boost-canvas.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\boost.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\boost.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\broken-axis.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\broken-axis.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\bullet.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\bullet.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\data.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\data.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\drag-panes.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\drag-panes.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\drilldown.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\drilldown.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\export-data.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\export-data.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\exporting.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\exporting.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\funnel.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\funnel.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\gantt.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\gantt.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\grid-axis.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\grid-axis.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\heatmap.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\heatmap.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\histogram-bellcurve.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\histogram-bellcurve.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\item-series.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\item-series.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\no-data-to-display.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\no-data-to-display.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\offline-exporting.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\offline-exporting.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\oldie.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\oldie.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\overlapping-datalabels.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\overlapping-datalabels.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\parallel-coordinates.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\parallel-coordinates.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\pareto.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\pareto.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\sankey.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\sankey.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\series-label.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\series-label.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\solid-gauge.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\solid-gauge.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\static-scale.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\static-scale.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\stock.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\stock.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\streamgraph.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\streamgraph.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\sunburst.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\sunburst.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\tilemap.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\tilemap.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\treemap.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\treemap.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\variable-pie.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\variable-pie.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\variwide.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\variwide.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\vector.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\vector.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\windbarb.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\windbarb.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\wordcloud.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\wordcloud.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\xrange.js" />
+    <Content Include="Scripts\Plugin\highcharts\modules\xrange.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\themes\avocado.js" />
+    <Content Include="Scripts\Plugin\highcharts\themes\avocado.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\themes\dark-blue.js" />
+    <Content Include="Scripts\Plugin\highcharts\themes\dark-blue.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\themes\dark-green.js" />
+    <Content Include="Scripts\Plugin\highcharts\themes\dark-green.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\themes\dark-unica.js" />
+    <Content Include="Scripts\Plugin\highcharts\themes\dark-unica.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\themes\gray.js" />
+    <Content Include="Scripts\Plugin\highcharts\themes\gray.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\themes\grid-light.js" />
+    <Content Include="Scripts\Plugin\highcharts\themes\grid-light.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\themes\grid.js" />
+    <Content Include="Scripts\Plugin\highcharts\themes\grid.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\themes\sand-signika.js" />
+    <Content Include="Scripts\Plugin\highcharts\themes\sand-signika.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\themes\skies.js" />
+    <Content Include="Scripts\Plugin\highcharts\themes\skies.src.js" />
+    <Content Include="Scripts\Plugin\highcharts\themes\sunset.js" />
+    <Content Include="Scripts\Plugin\highcharts\themes\sunset.src.js" />
+    <Content Include="Scripts\Plugin\jsrender.js" />
+    <Content Include="Scripts\Plugin\jsrender.min.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\kindeditor-all-min.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\kindeditor-all.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\kindeditor-min.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\kindeditor.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\lang\en.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\lang\zh_CN.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\license.txt" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\accessory.html" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\anchor\anchor.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\autoheight\autoheight.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\baidumap\baidumap.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\baidumap\index.html" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\baidumap\map.html" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\clearhtml\clearhtml.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\code\code.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\code\prettify.css" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\code\prettify.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\emoticons.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\0.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\1.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\10.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\100.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\101.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\102.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\103.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\104.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\105.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\106.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\107.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\108.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\109.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\11.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\110.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\111.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\112.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\113.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\114.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\115.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\116.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\117.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\118.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\119.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\12.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\120.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\121.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\122.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\123.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\124.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\125.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\126.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\127.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\128.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\129.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\13.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\130.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\131.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\132.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\133.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\134.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\14.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\15.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\16.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\17.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\18.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\19.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\2.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\20.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\21.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\22.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\23.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\24.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\25.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\26.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\27.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\28.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\29.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\3.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\30.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\31.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\32.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\33.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\34.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\35.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\36.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\37.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\38.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\39.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\4.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\40.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\41.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\42.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\43.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\44.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\45.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\46.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\47.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\48.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\49.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\5.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\50.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\51.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\52.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\53.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\54.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\55.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\56.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\57.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\58.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\59.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\6.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\60.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\61.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\62.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\63.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\64.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\65.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\66.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\67.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\68.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\69.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\7.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\70.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\71.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\72.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\73.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\74.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\75.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\76.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\77.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\78.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\79.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\8.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\80.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\81.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\82.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\83.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\84.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\85.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\86.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\87.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\88.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\89.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\9.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\90.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\91.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\92.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\93.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\94.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\95.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\96.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\97.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\98.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\99.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\emoticons\images\static.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\filemanager\filemanager.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\filemanager\images\file-16.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\filemanager\images\file-64.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\filemanager\images\folder-16.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\filemanager\images\folder-64.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\filemanager\images\go-up.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\flash\flash.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\image\image.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\image\images\align_left.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\image\images\align_right.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\image\images\align_top.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\image\images\refresh.png" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\insertfile\insertfile.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\lineheight\lineheight.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\link\link.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\map\map.html" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\map\map.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\media\media.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\multiimage\images\image.png" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\multiimage\images\select-files-en.png" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\multiimage\images\select-files-zh_CN.png" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\multiimage\images\swfupload.swf" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\multiimage\multiimage.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\pagebreak\pagebreak.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\plainpaste\plainpaste.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\preview\preview.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\quickformat\quickformat.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\table\table.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\template\html\1.html" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\template\html\2.html" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\template\html\3.html" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\template\template.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\plugins\wordpaste\wordpaste.js" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\themes\common\anchor.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\themes\common\blank.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\themes\common\flash.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\themes\common\loading.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\themes\common\media.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\themes\common\rm.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\themes\default\background.png" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\themes\default\default.css" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\themes\default\default.png" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\themes\qq\editor.gif" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\themes\qq\qq.css" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\themes\simple\simple.css" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\css\layui.css" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\css\layui.mobile.css" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\css\modules\code.css" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\css\modules\laydate\default\laydate.css" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\css\modules\layer\default\icon-ext.png" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\css\modules\layer\default\icon.png" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\css\modules\layer\default\layer.css" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\css\modules\layer\default\loading-0.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\css\modules\layer\default\loading-1.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\css\modules\layer\default\loading-2.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\font\iconfont.svg" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\0.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\1.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\10.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\11.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\12.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\13.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\14.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\15.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\16.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\17.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\18.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\19.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\2.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\20.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\21.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\22.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\23.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\24.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\25.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\26.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\27.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\28.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\29.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\3.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\30.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\31.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\32.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\33.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\34.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\35.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\36.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\37.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\38.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\39.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\4.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\40.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\41.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\42.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\43.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\44.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\45.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\46.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\47.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\48.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\49.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\5.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\50.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\51.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\52.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\53.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\54.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\55.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\56.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\57.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\58.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\59.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\6.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\60.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\61.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\62.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\63.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\64.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\65.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\66.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\67.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\68.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\69.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\7.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\70.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\71.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\8.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\images\face\9.gif" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\layui.all.js" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\layui.js" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\lay\modules\carousel.js" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\lay\modules\code.js" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\lay\modules\element.js" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\lay\modules\flow.js" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\lay\modules\form.js" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\lay\modules\jquery.js" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\lay\modules\laydate.js" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\lay\modules\layedit.js" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\lay\modules\layer.js" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\lay\modules\laypage.js" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\lay\modules\laytpl.js" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\lay\modules\mobile.js" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\lay\modules\table.js" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\lay\modules\tree.js" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\lay\modules\upload.js" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\lay\modules\util.js" />
+    <Content Include="Scripts\Plugin\pagination_zh\lib\jquery.min.js" />
+    <Content Include="Scripts\Plugin\pagination_zh\lib\jquery.pagination.js" />
+    <Content Include="Scripts\Plugin\pagination_zh\lib\pagination.css" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Salary\Index.cshtml" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\font\iconfont.eot" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\font\iconfont.ttf" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\font\iconfont.woff" />
+    <Content Include="Views\Salary\Create.cshtml" />
+    <Content Include="Views\Salary\Edit.cshtml" />
+    <Content Include="Views\Salary\Detail.cshtml" />
+    <Content Include="Scripts\Plugin\layui-v2.2.5\layui\server\editimgup.ashx" />
+    <Content Include="Views\Static\Index.cshtml" />
+    <Content Include="Scripts\Plugin\highcharts\css\highcharts.scss" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\highcharts-3d.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\highcharts-more.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\highcharts.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\accessibility.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\annotations.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\boost-canvas.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\boost.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\broken-axis.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\bullet.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\data.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\drag-panes.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\drilldown.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\export-data.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\exporting.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\funnel.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\gantt.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\grid-axis.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\heatmap.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\histogram-bellcurve.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\item-series.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\no-data-to-display.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\offline-exporting.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\oldie.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\overlapping-datalabels.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\parallel-coordinates.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\pareto.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\sankey.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\series-label.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\solid-gauge.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\static-scale.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\stock.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\streamgraph.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\sunburst.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\tilemap.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\treemap.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\variable-pie.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\variwide.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\vector.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\windbarb.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\wordcloud.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\modules\xrange.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\avocado.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\dark-blue.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\dark-green.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\dark-unica.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\gray.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\grid-light.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\grid.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\sand-signika.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\skies.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\css\js\themes\sunset.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\highcharts-3d.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\highcharts-more.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\highcharts.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\accessibility.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\annotations.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\boost-canvas.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\boost.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\broken-axis.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\bullet.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\data.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\drag-panes.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\drilldown.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\export-data.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\exporting.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\funnel.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\gantt.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\grid-axis.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\heatmap.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\histogram-bellcurve.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\item-series.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\no-data-to-display.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\offline-exporting.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\oldie.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\overlapping-datalabels.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\parallel-coordinates.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\pareto.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\sankey.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\series-label.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\solid-gauge.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\static-scale.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\stock.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\streamgraph.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\sunburst.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\tilemap.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\treemap.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\variable-pie.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\variwide.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\vector.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\windbarb.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\wordcloud.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\modules\xrange.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\themes\avocado.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\themes\dark-blue.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\themes\dark-green.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\themes\dark-unica.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\themes\gray.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\themes\grid-light.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\themes\grid.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\themes\sand-signika.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\themes\skies.js.map" />
+    <Content Include="Scripts\Plugin\highcharts\themes\sunset.js.map" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\attached\UploadImage.ashx" />
+    <Content Include="Scripts\Plugin\kindeditor-4.1.10\attached\upload_json.ashx" />
+    <Content Include="Views\ES6\Index.cshtml" />
+    <Content Include="Views\ES6\Create.cshtml" />
+    <Content Include="Views\ES6\Detail.cshtml" />
+    <Content Include="Views\ES6\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\images\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Micor.Remote.Interface\Micor.Remote.Interface.csproj">
+      <Project>{8634f0a2-1a75-4df0-9c11-6072a975fefc}</Project>
+      <Name>Micor.Remote.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Micor.Remote.Model\Micor.Remote.Model.csproj">
+      <Project>{968a1e3e-83a5-4ad5-a0f9-f8c3197f4bb0}</Project>
+      <Name>Micor.Remote.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Micor.Remote.Service\Micor.Remote.Service.csproj">
+      <Project>{15e1d470-e008-4e44-a7c6-8b0b16933bc6}</Project>
+      <Name>Micor.Remote.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Micro.Es6.Interface\Micro.Es6.Interface.csproj">
+      <Project>{fe43c9ef-1b2b-4d4d-a442-828a327bd538}</Project>
+      <Name>Micro.Es6.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Micro.Es6.Model\Micro.Es6.Model.csproj">
+      <Project>{04d382e5-9dd2-4a23-99cf-7109b042f92a}</Project>
+      <Name>Micro.Es6.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Micro.Es6.Service\Micro.Es6.Service.csproj">
+      <Project>{99674e68-68da-404d-9e85-099a78f7925a}</Project>
+      <Name>Micro.Es6.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Micro.Wanter.Common\Micro.Wanter.Common.csproj">
+      <Project>{c2c4523b-6296-48d1-aadc-6e7b8256195f}</Project>
+      <Name>Micro.Wanter.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Micro.Wanter.Interface\Micro.Wanter.Interface.csproj">
+      <Project>{90fa3587-d444-4457-a2fc-4982d0b93ee8}</Project>
+      <Name>Micro.Wanter.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Micro.Wanter.Model\Micro.Wanter.Model.csproj">
+      <Project>{0a611fd4-b854-48ef-8ac9-66a1bba019e0}</Project>
+      <Name>Micro.Wanter.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Micro.Wanter.Service\Micro.Wanter.Service.csproj">
+      <Project>{8c53c7c1-6a53-4f33-8f9e-1d4535c7f93f}</Project>
+      <Name>Micro.Wanter.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>12167</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://127.0.0.1:10086/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

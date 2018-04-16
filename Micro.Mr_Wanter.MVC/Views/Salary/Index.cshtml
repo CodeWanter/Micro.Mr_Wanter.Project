@@ -1,0 +1,180 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<link href="~/Scripts/Plugin/pagination_zh/lib/pagination.css" rel="stylesheet" />
+<link href="~/Scripts/Plugin/layui-v2.2.5/layui/css/layui.css" rel="stylesheet" />
+<style type="text/css">
+    .tdClass {
+        width: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+</style>
+<hr class="layui-bg-red">
+<div class="container">
+    <div class="row">
+        <div class="span6">
+            <ul class="breadcrumb">
+                <li>
+                    <a href="/">Home</a> <span class="divider">></span>
+                </li>
+                <li>
+                    <a href="/Salary/Index">Salary</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<a href="/Salary/Create" class="layui-btn layui-btn-normal">Create</a>
+<a href="/Salary/ExportToExcel" class="layui-btn layui-btn-normal">ExportToExcel</a>
+<div class="floatright">
+    <span title="实发合计"><i>@ViewBag.FinalSalary￥</i></span>/<span title="应发合计"><i>@ViewBag.TotalSalary￥</i></span>
+</div>
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>时间</td>
+                <td>应发工资</td>
+                <td>实发工资</td>
+                <td>总扣除</td>
+                <td>公积金</td>
+                <td>扣款</td>
+                <td>详情</td>
+                <td>编辑</td>
+                <td>删除</td>
+            </tr>
+        </thead>
+        <tbody id="List"></tbody>
+    </table>
+    <div id="Pagination" class="dataTables_paginate paging_bootstrap pagination center"></div>
+</div>
+@section Scripts{
+    <script src="~/Scripts/Plugin/layui-v2.2.5/layui/layui.js"></script>
+    <script src="~/Scripts/Plugin/jsrender.js"></script>
+    <script src="~/Scripts/respond.js"></script>
+    <script src="~/Scripts/Plugin/pagination_zh/lib/jquery.pagination.js"></script>
+    <script type="text/x-jsrender" id="dataList">
+        <tr>
+            <td class="tdClass">{{getDate:SalaryTime}}</td>
+            <td class="tdClass"><i>{{:TotalSalary}}</i></td>
+            <td class="tdClass"><i>{{:FinalSalary}}</i></td>
+            <td class="tdClass"><i>{{:DeductedSalary}}</i></td>
+            <td class="tdClass"><i>{{:AccumulationFund}}</i></td>
+            <td class="tdClass"><i>{{:LeaveSalary}}</i></td>
+            <td class="tdClass"><a href="/Salary/Detail/{{:id}}">Detail</a></td>
+            <td class="tdClass"><a href="javascript:void(0)" onclick="Edit({{:id}})">Edit</a></td>
+            <td class="tdClass"><a href="javascript:void(0)" onclick="Delete({{:id}})">Delete</a></td>
+        </tr>
+    </script>
+    <script type="text/javascript">
+        var pageIndex = 0;
+        var pageSize = 10;
+        $(function () {
+            PaginationInit(pageIndex, pageSize);
+        });
+
+        function PaginationInit(pageIndex, pageSize) {
+            $.post("/Salary/GetSalary", { "pageIndex": pageIndex, "pageSize": pageSize }, function (data) {
+                // 创建分页
+                $("#Pagination").pagination(data.TotalCount, {
+                    num_edge_entries: 1, //边缘页数
+                    num_display_entries: 10, //主体页数
+                    callback: paginationCallback, //回调函数
+                    items_per_page: pageSize, //每页显示多少项
+                    prev_text: "<<上一页",
+                    next_text: "下一页>>",
+                    link_to: 'javascript:void(0);'
+                });
+            });
+        }
+
+        function paginationCallback(pageIndex, jq) {
+            $.ajax({
+                type: "POST",
+                url: "/Salary/GetSalary",
+                data: { "pageIndex": pageIndex, "pageSize": pageSize },
+                dataType: "json",
+                async: true,
+                beforeSend: function () {
+                },
+                complete: function () {
+                },
+                success: function (result) {
+                    $("#List").html("");
+                    var html = $("#dataList").render(result.DataList);
+                    $("#List").append(html);
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert('error...状态文本值：' + textStatus + " 异常信息：" + errorThrown);
+                    layer.msg('保存异常!');
+                }
+            });
+        }
+
+        layui.use('layer', function () {
+            var $ = layui.jquery, layer = layui.layer;
+        });
+
+        function Edit(id) {
+            parent.layer.open({
+                type: 2,
+                title: '数据修改',
+                maxmin: true,
+                shadeClose: true, //点击遮罩关闭层
+                area: ['800px', '520px'],
+                content: '/Salary/Edit/' + id,
+                end: function () {
+                    location.reload();
+                }
+            });
+        }
+
+        function Delete(id) {
+            layer.confirm('确认删除？', {
+                btn: ['yes', '后悔药'] //按钮
+            }, function () {
+                $.post("/Salary/Delete", { id: id }, function (data) {
+                    if (data.result == true) {
+                        PaginationInit(pageIndex, pageSize);
+                        layer.msg('---删除成功!---', {
+                            time: 2000, //2s后自动关闭
+                            btn: ['ok']
+                        });
+                    }
+                });
+            }, function () {
+
+            });
+        }
+   
+        $.views.converters("getDate", function (SalaryTime) {
+            var date = new Date(parseInt(SalaryTime.slice(6)));
+            var result = date.Format("yyyy-MM-dd");
+            return result;
+        });
+
+        Date.prototype.Format = function (fmt) { // author: meizz
+            var o = {
+                "M+": this.getMonth() + 1, // 月份
+                "d+": this.getDate(), // 日
+                "h+": this.getHours(), // 小时
+                "m+": this.getMinutes(), // 分
+                "s+": this.getSeconds(), // 秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), // 季度
+                "S": this.getMilliseconds()
+                // 毫秒
+            };
+            if (/(y+)/.test(fmt))
+                fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "")
+                .substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt))
+                    fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k])
+                    : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
+        };
+     </script>
+}

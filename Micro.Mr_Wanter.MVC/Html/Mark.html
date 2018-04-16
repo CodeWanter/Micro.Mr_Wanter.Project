@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="../Scripts/Plugin/layui-v2.2.5/layui/css/layui.css" rel="stylesheet" />
+</head>
+<body>
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>系统说明</legend>
+    </fieldset>
+    <div class="layui-collapse">
+        <div class="layui-colla-item">
+            <h2 class="layui-colla-title">系统说明</h2>
+            <div class="layui-colla-content layui-show">
+                <div class="layui-collapse" lay-accordion="">
+                    <P>1、本系统为个人学习、娱乐的系统，无明确需求。</P>
+                    <P>2、访问SALARY和STATIC需要系统登录，验证码区分大小写。</P>
+                    <P>3、SALARY主要实现对个人每月薪资的记录。</P>
+                    <P>4、STATIC是对薪资情况的统计图表，分别统计应发工资和实发工资。</P>
+                    <P>5、ELASTIC1需要引入万方软件独立封装的wcf接口并配备es1.0.0版本及数据才可以调用。</P>
+                    <P>6、ELASTIC2是es2.4.2版本的。</P>
+                    <P>7、ELASTIC2不需要任何接口，为系统底层直接调用的nest实现。</P>
+                </div>
+            </div>
+        </div>
+        <div class="layui-colla-item">
+            <h2 class="layui-colla-title">系统更新日志</h2>
+            <div class="layui-colla-content  layui-show">
+                <div class="layui-collapse" lay-accordion="">
+                    <ul class="layui-timeline">
+                        <li class="layui-timeline-item">
+                            <i class="layui-icon layui-timeline-axis"></i>
+                            <div class="layui-timeline-content layui-text">
+                                <h3 class="layui-timeline-title">2018.04.16</h3>
+                                <p>
+                                    将用户权限过滤器提出到Micro.Wanter.Common内，便于重用。
+                                    <br>添加异常过滤机制，并应用log4net记录日志。
+                                    <i class="layui-icon"></i>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="layui-timeline-item">
+                            <i class="layui-icon layui-timeline-axis"></i>
+                            <div class="layui-timeline-content layui-text">
+                                <h3 class="layui-timeline-title">2018.04.13</h3>
+                                <p>
+                                    ES2中添加<em>“Init”</em>按钮：初始化es数据，即将sqlserver数据导入es2.4.2中
+                                    <br />es nest 底层调用添加Highlight高亮数据返回
+                                </p>
+                            </div>
+                        </li>
+                        <li class="layui-timeline-item">
+                            <i class="layui-icon layui-timeline-axis"></i>
+                            <div class="layui-timeline-content layui-text">
+                                <h3 class="layui-timeline-title">2018.04.10</h3>
+                                <p>
+                                    搭建框架
+                                    <br />实现薪水查询功能
+                                    <br>实现薪水统计功能
+                                    <br>实现对es1.0.0 的WCF服务调用封装
+                                    <br>实现对es2.4.2 的底层调用NEST
+                                </p>
+                            </div>
+                        </li>
+                        <li class="layui-timeline-item">
+                            <i class="layui-icon layui-timeline-axis"></i>
+                            <div class="layui-timeline-content layui-text">
+                                <div class="layui-timeline-title">过去</div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="layui-colla-item">
+            <h2 class="layui-colla-title">待修改说明</h2>
+            <div class="layui-colla-content">
+                <div class="layui-collapse" lay-accordion="">
+                    <P>1、添加默认错误页面</P>
+                    <P>2、薪资创建页面的富文本框功能修复 </P>
+                    <P>3、导航部分用户名过长时显示问题修复</P>
+                    <P>4、highstock更改为本地引用</P>
+                    <P>5、es2.4.2 索引创建过程中大部分特性无法生效</P>
+                    <P>6、es2.4.2 底层实现聚类分析</P>
+                </div>
+            </div>
+        </div>
+        <div class="layui-colla-item">
+            <h2 class="layui-colla-title">技术说明</h2>
+            <div class="layui-colla-content">
+                <div class="layui-collapse" lay-accordion="">
+                    <div class="layui-colla-item">
+                        <h2 class="layui-colla-title">架构&技术</h2>
+                        <div class="layui-colla-content">
+                            <div class="layui-collapse" lay-accordion="">
+                                <p>1、.net mvc 5</p>
+                                <p>2、经典三层架构，独立封装调用</p>
+                                <p>3、重写控制器返回层，默认添加ioc（unity）容器注入</p>
+                                <p>4、WCF引用</p>
+                                <p>5、entityframework</p>
+                                <p>6、elasticsearch nest 2.4.2</p>
+                                <p>7、扩展htmlstringmvc,实现验证码工具</p>
+                                <p>8、AOP实现用户访问权限拦截</p>
+                                <p>9、扩展actionresult帮助类，实现直接下载excel</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-colla-item">
+                        <h2 class="layui-colla-title">数据库</h2>
+                        <div class="layui-colla-content">
+                            <div class="layui-collapse" lay-accordion="">
+                                <p>1、sqlserver2008R2</p>
+                                <p>2、elasticsearch 1.0.0</p>
+                                <p>3、elasticsearch 2.4.2</p>
+                            </div>
+                        </div>
+                        <div class="layui-colla-item">
+                            <h2 class="layui-colla-title">前端插件</h2>
+                            <div class="layui-colla-content">
+                                <div class="layui-collapse" lay-accordion="">
+                                    <p>1、bootstrap</p>
+                                    <p>2、layui</p>
+                                    <p>3、kindeditor</p>
+                                    <p>4、jquery.validate</p>
+                                    <p>5、highstock</p>
+                                    <p>6、render.js</p>
+                                    <p>7、jQuery Pagination</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center;  margin: 20px;">
+        Copyright &copy; 2018.Mr.Zhang All rights reserved.<a target="_blank" href="https://blog.csdn.net/mr_wanter">MY BOLG</a>
+    </div>
+</body>
+</html>
+<script src="../Scripts/Plugin/layui-v2.2.5/layui/layui.js"></script>
+<script>
+    //注意：折叠面板 依赖 element 模块，否则无法进行功能性操作
+    layui.use(['element', 'layer'], function () {
+        var element = layui.element;
+        var layer = layui.layer;
+    });
+</script>

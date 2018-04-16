@@ -1,0 +1,22 @@
+﻿@using Micro.Wanter.Model;
+
+@if (Context.Session["CurrentUser"] != null && Context.Session["CurrentUser"] is S_User)
+{
+    using (Html.BeginForm("Logout", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="mainmenu text-right">
+            <ul id="navigation">
+                <li> @Html.ActionLink(((S_User)Context.Session["CurrentUser"]).UserName, "Index", "Home", routeValues: null, htmlAttributes: new { title = ((S_User)Context.Session["CurrentUser"]).UserName })</li>
+                <li><a  href="javascript:document.getElementById('logoutForm').submit()">注销</a></li>
+            </ul>
+        </div>
+    }
+}
+else
+{
+    <div class="free-seo text-right">
+        <button type="button" name="button" onclick="window.location.href = '/Account/Login'">Login</button>
+    </div>
+}
+

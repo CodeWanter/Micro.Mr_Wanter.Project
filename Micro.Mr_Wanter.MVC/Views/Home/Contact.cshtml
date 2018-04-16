@@ -1,0 +1,114 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<link href="~/Scripts/Plugin/pagination_zh/lib/pagination.css" rel="stylesheet" />
+<style type="text/css">
+    .tdClass {
+        width: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space:nowrap;
+    }
+</style>
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+<div>
+    <input type="text" id="txtSearch" class="input-sm" />
+    @Html.Hidden("htxtSearch", "*", new { id = "htxtSearch" })
+    <input type="button" id="btnSearch" value="检索" class="btn-success" onclick="KeySearch()" />
+</div>
+<ul class="PB2017_List2" id="List"></ul>
+<div id="Pagination" class="dataTables_paginate paging_bootstrap pagination"></div>
+
+<address>
+    One Microsoft Way<br />
+    Redmond, WA 98052-6399<br />
+    <abbr title="Phone">P:</abbr>
+    425.555.0100
+</address>
+<address>
+    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+</address>
+@section scripts{
+    <script src="~/Scripts/Plugin/jsrender.js"></script>
+    <script src="~/Scripts/respond.min.js"></script>
+    <script src="~/Scripts/Plugin/pagination_zh/lib/jquery.pagination.js"></script>
+    <script type="text/x-jsrender" id="dataList">
+        <tr>
+            <td>{{:#index + 1}}</td>
+            <td class="tdClass">{{:Title}}</td>
+            <td  class="tdClass">{{:Author}}</td>
+            <td  class="tdClass">{{:Cbsj}}</td>
+            <td>   </td>
+            <td>
+                <a href="/Person/Edit/{{:f_id}}">Edit</a> |
+                <a href="/Person/Details/{{:f_id}}">Details</a> |
+                <a href="/Person/Delete/{{:f_id}}">Delete</a>
+            </td>
+        </tr>
+    </script>
+    <script type="text/javascript">
+        var searchString = getUrlParam("key");
+        var pageIndex = 1;
+        var pageSize = 10;
+        $(function () {
+            $("#txtSearch").val(unescape(searchString));
+            tableInit(searchString, pageIndex, pageSize);
+        });
+
+        var tableInit = function PaginationInit(searchString, pageIndex, pageSize) {
+            $.post("/Home/GetEsData", { "searchString": searchString, "pageIndex": pageIndex, "pageSize": pageSize }, function (data) {
+                // 创建分页
+                $("#Pagination").pagination(data.TotalCount, {
+                    num_edge_entries: 1, //边缘页数
+                    num_display_entries: 10, //主体页数
+                    callback: paginationCallback, //回调函数
+                    items_per_page: pageSize, //每页显示多少项
+                    prev_text: "上一页",
+                    next_text: "下一页",
+                    link_to: 'javascript:void(0);'
+                    //link_to: "?pageIndex=/pageIndex"  //分页的js中会自动把"__id__"替换为当前的数。0　
+                });
+            });
+        }
+
+        function paginationCallback(pageIndex, jq) {
+            $.ajax({
+                type: "POST",
+                url: "/Home/GetEsData",
+                data: { "searchString": searchString, "pageIndex": pageIndex, "pageSize": pageSize },
+                dataType: "json",
+                async: false,
+                beforeSend: function () {
+                    $("#loading").html('loading...');
+                },
+                complete: function () {
+                    $("#loading").html("");
+                },
+                success: function (result) {
+                    $("#List").html("");
+                    var html = $("#dataList").render(result.DataList);
+                    $("#List").append(html);
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert('error...状态文本值：' + textStatus + " 异常信息：" + errorThrown);
+                    $("#loading").html("");
+                }
+            });
+        }
+
+        var KeySearch = function () {
+            window.location.href = "/Home/Contact?key=" + escape($("#txtSearch").val()) + "";
+            //searchString = escape($("#txtSearch").val());
+            //tableInit(searchString, pageIndex, pageSize);
+        }
+
+        //获取url参数
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+    </script>
+}

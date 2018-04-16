@@ -1,0 +1,48 @@
+﻿@model Micro.Es6.Model.MainRCJournalInfo
+@{
+    ViewBag.Title = "Detail";
+}
+<link href="~/Scripts/Plugin/layui-v2.2.5/layui/css/layui.css" rel="stylesheet" />
+<hr class="layui-bg-red">
+<div class="container">
+    <div class="row">
+        <div class="span6">
+            <ul class="breadcrumb">
+                <li>
+                    <a href="/">Home</a> <span class="divider">></span>
+                </li>
+                <li>
+                    <a href="/Salary/Index">ES2.4.2</a>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<blockquote class="layui-elem-quote layui-quote-nm">
+    Elasticsearch2.4.2 NEST实现数据的增删改查
+</blockquote>
+
+<table class="table table-hover table-condensed">
+    <thead style="background-color:#1489fc;font-size:18px;color:white">
+        <tr>
+            <td><strong>期刊:</strong></td>
+            <td><strong>明细</strong></td>
+        </tr>
+    </thead>
+    <tr>
+        <td><strong>期刊:</strong></td>
+        <td><i>@Model.TITLE</i></td>
+    </tr>
+    <tr>
+        <td><strong>出版单位:</strong></td>
+        <td><i>@Model.PUBLISHER</i></td>
+    </tr>
+    <tr>
+        <td><strong>出版地:</strong></td>
+        <td><i>@Model.PUBLISHING_PLACE</i></td>
+    <tr>
+        <td><strong>出版日期:</strong></td>
+        <td><i>@Model.PUBLISHING_PERIOD</i></td>
+    </tr>
+</table>
+
