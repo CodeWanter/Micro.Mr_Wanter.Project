@@ -14,6 +14,8 @@ namespace Micro.Mr_Wanter.MVC
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.IgnoreRoute("Html/*");
 
+            routes.MapMvcAttributeRoutes();//启用Attribute路由
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
