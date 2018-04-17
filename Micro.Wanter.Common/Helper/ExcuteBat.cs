@@ -17,13 +17,28 @@ namespace Micro.Wanter.Common.Helper
         /// <param name="path">存放启动ElasticSearch的文件路径</param>
         public static void Bat()
         {
+            try
+            {
+                Process[] processes = Process.GetProcesses();
+                foreach (Process p in processes)
+                {
+                    if (p.ProcessName == "java")
+                    {
+                        p.Kill();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
+
             string targetDir = ConfigurationManager.AppSettings["targetDir"];
             string args = ConfigurationManager.AppSettings["args"];
             // string targetDir = string.Format(@"D:\工作\elasticsearch\elasticsearch-2.4.2\bin");//this is where mybatch.bat lies
             Process process = new Process();
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.WorkingDirectory = targetDir;
-            startInfo.FileName = " cmd.exe ";
+            startInfo.FileName = "cmd.exe ";
             startInfo.Arguments = args;
             //string.Format(@"/K D:\工作\elasticsearch\elasticsearch-2.4.2\bin\elasticsearch.bat");
             startInfo.UseShellExecute = false;

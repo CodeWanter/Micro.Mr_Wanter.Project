@@ -159,3 +159,180 @@ System.ComponentModel.Win32Exception (0x80004005): 系统找不到指定的文件。
  ----------------------header-------------------------- 2018-04-17 14:34:29,967 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
  ----------------------header-------------------------- 2018-04-17 14:35:54,845 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
  ----------------------header-------------------------- 2018-04-17 14:38:53,523 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 15:15:01,504 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------footer--------------------------  ----------------------header-------------------------- 2018-04-17 15:51:22,120 [36] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+2018-04-17 15:51:30,307 [35] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[ES6] 的 action[index] 时产生异常
+Elasticsearch.Net.PipelineException: Failed sniffing cluster state. ---> System.AggregateException: 发生一个或多个错误。 ---> Elasticsearch.Net.PipelineException: An error occurred trying to read the response from the specified node.
+   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 325
+   --- 内部异常堆栈跟踪的结尾 ---
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 340
+   在 Elasticsearch.Net.RequestPipeline.FirstPoolUsage(SemaphoreSlim semaphore) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 133
+   在 Elasticsearch.Net.Transport`1.Request[TReturn](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Transport.cs:行号 53
+   在 Elasticsearch.Net.ElasticLowLevelClient.DoRequest[T](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.cs:行号 58
+   在 Elasticsearch.Net.ElasticLowLevelClient.Search[T](String index, String type, PostData`1 body, Func`2 requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.Generated.cs:行号 6838
+   在 Nest.LowLevelDispatch.SearchDispatch[T](IRequest`1 p, PostData`1 body) 位置 C:\code\elasticsearch-net\src\Nest\_Generated\_LowLevelDispatch.generated.cs:行号 2573
+   在 Nest.ElasticClient.<>c__DisplayClass521_0`2.<Search>b__0(ISearchRequest p, PostData`1 d) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 73
+   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 responseGenerator, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 56
+   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 46
+   在 Nest.ElasticClient.Search[T,TResult](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 71
+   在 Nest.ElasticClient.Search[T](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 65
+   在 Nest.ElasticClient.Search[T,TResult](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 61
+   在 Nest.ElasticClient.Search[T](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 55
+   在 Micro.Es6.Service.MainRCJournalInfoService.FactSearcher(QueryContainer Query) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\MainRCJournalInfoService.cs:行号 153
+   在 Micro.Mr_Wanter.MVC.Controllers.ES6Controller.Index(String queryString) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Mr_Wanter.MVC\Controllers\ES6Controller.cs:行号 38
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+ ----------------------header-------------------------- 2018-04-17 15:54:48,444 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 15:55:54,914 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+2018-04-17 15:56:46,451 [14] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[ES6] 的 action[index] 时产生异常
+Elasticsearch.Net.PipelineException: Failed sniffing cluster state. ---> System.AggregateException: 发生一个或多个错误。 ---> System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Elasticsearch.Net.Node..ctor(Uri uri) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ConnectionPool\Node.cs:行号 27
+   在 Elasticsearch.Net.SniffResponse.<ToNodes>d__11.MoveNext() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Sniff\SniffResponse.cs:行号 20
+   在 System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   在 System.Linq.OrderedEnumerable`1.<GetEnumerator>d__1.MoveNext()
+   在 System.Linq.Lookup`2.Create[TSource](IEnumerable`1 source, Func`2 keySelector, Func`2 elementSelector, IEqualityComparer`1 comparer)
+   在 System.Linq.GroupedEnumerable`3.GetEnumerator()
+   在 System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Elasticsearch.Net.SniffingConnectionPool.Reseed(IEnumerable`1 nodes) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ConnectionPool\SniffingConnectionPool.cs:行号 48
+   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 327
+   --- 内部异常堆栈跟踪的结尾 ---
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 340
+   在 Elasticsearch.Net.RequestPipeline.FirstPoolUsage(SemaphoreSlim semaphore) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 133
+   在 Elasticsearch.Net.Transport`1.Request[TReturn](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Transport.cs:行号 53
+   在 Elasticsearch.Net.ElasticLowLevelClient.DoRequest[T](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.cs:行号 58
+   在 Elasticsearch.Net.ElasticLowLevelClient.Search[T](String index, String type, PostData`1 body, Func`2 requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.Generated.cs:行号 6838
+   在 Nest.LowLevelDispatch.SearchDispatch[T](IRequest`1 p, PostData`1 body) 位置 C:\code\elasticsearch-net\src\Nest\_Generated\_LowLevelDispatch.generated.cs:行号 2573
+   在 Nest.ElasticClient.<>c__DisplayClass521_0`2.<Search>b__0(ISearchRequest p, PostData`1 d) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 73
+   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 responseGenerator, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 56
+   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 46
+   在 Nest.ElasticClient.Search[T,TResult](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 71
+   在 Nest.ElasticClient.Search[T](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 65
+   在 Nest.ElasticClient.Search[T,TResult](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 61
+   在 Nest.ElasticClient.Search[T](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 55
+   在 Micro.Es6.Service.MainRCJournalInfoService.FactSearcher(QueryContainer Query) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\MainRCJournalInfoService.cs:行号 153
+   在 Micro.Mr_Wanter.MVC.Controllers.ES6Controller.Index(String queryString) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Mr_Wanter.MVC\Controllers\ES6Controller.cs:行号 38
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+ ----------------------header-------------------------- 2018-04-17 15:58:16,722 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 16:00:33,496 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 16:02:29,243 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+2018-04-17 16:03:05,973 [8] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[ES6] 的 action[GetData] 时产生异常
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Micro.Es6.Service.BaseService`1.PageCount2(ElasticClient client, String Query, SearchDescriptor`1 query) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\BaseService.cs:行号 69
+   在 Micro.Es6.Service.MainRCJournalInfoService.PageResultSearcher2(String queryString, Int32 pageIndex, Int32 pageSize) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\MainRCJournalInfoService.cs:行号 135
+   在 Micro.Mr_Wanter.MVC.Controllers.ES6Controller.GetData(String queryString, Int32 pageIndex, Int32 pageSize) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Mr_Wanter.MVC\Controllers\ES6Controller.cs:行号 64
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-04-17 16:03:09,603 [13] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[ES6] 的 action[GetData] 时产生异常
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Micro.Es6.Service.BaseService`1.PageCount2(ElasticClient client, String Query, SearchDescriptor`1 query) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\BaseService.cs:行号 69
+   在 Micro.Es6.Service.MainRCJournalInfoService.PageResultSearcher2(String queryString, Int32 pageIndex, Int32 pageSize) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\MainRCJournalInfoService.cs:行号 135
+   在 Micro.Mr_Wanter.MVC.Controllers.ES6Controller.GetData(String queryString, Int32 pageIndex, Int32 pageSize) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Mr_Wanter.MVC\Controllers\ES6Controller.cs:行号 64
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+ ----------------------header-------------------------- 2018-04-17 16:06:51,146 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+2018-04-17 16:07:14,207 [13] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[ES6] 的 action[GetData] 时产生异常
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Micro.Es6.Service.BaseService`1.PageCount2(ElasticClient client, String Query, SearchDescriptor`1 query) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\BaseService.cs:行号 69
+   在 Micro.Es6.Service.MainRCJournalInfoService.PageResultSearcher2(String queryString, Int32 pageIndex, Int32 pageSize) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\MainRCJournalInfoService.cs:行号 135
+   在 Micro.Mr_Wanter.MVC.Controllers.ES6Controller.GetData(String queryString, Int32 pageIndex, Int32 pageSize) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Mr_Wanter.MVC\Controllers\ES6Controller.cs:行号 64
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-04-17 16:07:24,489 [8] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[ES6] 的 action[GetData] 时产生异常
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Micro.Es6.Service.BaseService`1.PageCount2(ElasticClient client, String Query, SearchDescriptor`1 query) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\BaseService.cs:行号 69
+   在 Micro.Es6.Service.MainRCJournalInfoService.PageResultSearcher2(String queryString, Int32 pageIndex, Int32 pageSize) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\MainRCJournalInfoService.cs:行号 135
+   在 Micro.Mr_Wanter.MVC.Controllers.ES6Controller.GetData(String queryString, Int32 pageIndex, Int32 pageSize) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Mr_Wanter.MVC\Controllers\ES6Controller.cs:行号 64
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+ ----------------------header-------------------------- 2018-04-17 16:08:23,432 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 16:12:20,520 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 16:13:47,389 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块

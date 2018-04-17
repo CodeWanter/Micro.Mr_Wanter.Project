@@ -20,11 +20,13 @@ namespace Micro.Mr_Wanter.MVC
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            //string targetDir = string.Format(@"D:\工作\elasticsearch\elasticsearch-2.4.2\bin");
-            //string args = string.Format(@"/K D:\工作\elasticsearch\elasticsearch-2.4.2\bin\elasticsearch.bat");
             ExcuteBat.Bat();//启动es2.4.2服务
             Database.SetInitializer<DbContextEntity>(null);
             ControllerBuilder.Current.SetControllerFactory(new UnityControllerFactory());//替换默认的控制器工厂
+        }
+
+        protected void Application_End()
+        {
         }
     }
 }

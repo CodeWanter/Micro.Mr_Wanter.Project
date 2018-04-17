@@ -68,8 +68,10 @@ namespace Micro.Es6.Service
         {
             var result = client.Search<T>(
                x => query
-                ).HitsMetaData.Total;
-            return (int)result;
+                );
+            if (result != null)
+                return (int)(result.HitsMetaData.Total);
+            return 0;
         }
 
         public virtual bool DeleteRowById(ElasticClient client, DocumentPath<T> document)
