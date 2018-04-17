@@ -2,6 +2,7 @@
 using Micor.Remote.Model;
 using Micro.Mr_Wanter.Common.Filter;
 using Micro.Wanter.Common;
+using Micro.Wanter.Common.Helper;
 using PagedList;
 using System;
 using System.Web.Mvc;

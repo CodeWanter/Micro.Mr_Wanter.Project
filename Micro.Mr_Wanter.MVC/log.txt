@@ -1,5 +1,5 @@
- ----------------------header-------------------------- 2018-04-16 14:18:30,205 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
-2018-04-16 14:18:44,659 [5] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[ES6] 的 action[index] 时产生异常
+ ----------------------header-------------------------- 2018-04-17 08:22:13,956 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+2018-04-17 08:47:05,309 [31] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[ES6] 的 action[index] 时产生异常
 Elasticsearch.Net.PipelineException: Failed sniffing cluster state. ---> System.AggregateException: 发生一个或多个错误。 ---> Elasticsearch.Net.PipelineException: An error occurred trying to read the response from the specified node.
    在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 325
    --- 内部异常堆栈跟踪的结尾 ---
@@ -35,347 +35,9 @@ Elasticsearch.Net.PipelineException: Failed sniffing cluster state. ---> System.
    在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
    在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
    在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
-2018-04-16 14:20:14,787 [13] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[ES6] 的 action[index] 时产生异常
-Elasticsearch.Net.PipelineException: Failed sniffing cluster state. ---> System.AggregateException: 发生一个或多个错误。 ---> Elasticsearch.Net.PipelineException: An error occurred trying to read the response from the specified node.
-   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 325
-   --- 内部异常堆栈跟踪的结尾 ---
-   --- 内部异常堆栈跟踪的结尾 ---
-   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 340
-   在 Elasticsearch.Net.RequestPipeline.FirstPoolUsage(SemaphoreSlim semaphore) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 133
-   在 Elasticsearch.Net.Transport`1.Request[TReturn](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Transport.cs:行号 53
-   在 Elasticsearch.Net.ElasticLowLevelClient.DoRequest[T](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.cs:行号 58
-   在 Elasticsearch.Net.ElasticLowLevelClient.Search[T](String index, String type, PostData`1 body, Func`2 requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.Generated.cs:行号 6838
-   在 Nest.LowLevelDispatch.SearchDispatch[T](IRequest`1 p, PostData`1 body) 位置 C:\code\elasticsearch-net\src\Nest\_Generated\_LowLevelDispatch.generated.cs:行号 2573
-   在 Nest.ElasticClient.<>c__DisplayClass521_0`2.<Search>b__0(ISearchRequest p, PostData`1 d) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 73
-   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 responseGenerator, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 56
-   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 46
-   在 Nest.ElasticClient.Search[T,TResult](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 71
-   在 Nest.ElasticClient.Search[T](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 65
-   在 Nest.ElasticClient.Search[T,TResult](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 61
-   在 Nest.ElasticClient.Search[T](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 55
-   在 Micro.Es6.Service.MainRCJournalInfoService.FactSearcher(QueryContainer Query) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\MainRCJournalInfoService.cs:行号 153
-   在 Micro.Mr_Wanter.MVC.Controllers.ES6Controller.Index(String queryString) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Mr_Wanter.MVC\Controllers\ES6Controller.cs:行号 38
-   在 lambda_method(Closure , ControllerBase , Object[] )
-   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
-   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
-   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
-2018-04-16 14:20:56,145 [5] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[ES6] 的 action[index] 时产生异常
-Elasticsearch.Net.PipelineException: Failed sniffing cluster state. ---> System.AggregateException: 发生一个或多个错误。 ---> Elasticsearch.Net.PipelineException: An error occurred trying to read the response from the specified node.
-   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 325
-   --- 内部异常堆栈跟踪的结尾 ---
-   --- 内部异常堆栈跟踪的结尾 ---
-   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 340
-   在 Elasticsearch.Net.RequestPipeline.FirstPoolUsage(SemaphoreSlim semaphore) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 133
-   在 Elasticsearch.Net.Transport`1.Request[TReturn](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Transport.cs:行号 53
-   在 Elasticsearch.Net.ElasticLowLevelClient.DoRequest[T](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.cs:行号 58
-   在 Elasticsearch.Net.ElasticLowLevelClient.Search[T](String index, String type, PostData`1 body, Func`2 requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.Generated.cs:行号 6838
-   在 Nest.LowLevelDispatch.SearchDispatch[T](IRequest`1 p, PostData`1 body) 位置 C:\code\elasticsearch-net\src\Nest\_Generated\_LowLevelDispatch.generated.cs:行号 2573
-   在 Nest.ElasticClient.<>c__DisplayClass521_0`2.<Search>b__0(ISearchRequest p, PostData`1 d) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 73
-   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 responseGenerator, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 56
-   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 46
-   在 Nest.ElasticClient.Search[T,TResult](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 71
-   在 Nest.ElasticClient.Search[T](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 65
-   在 Nest.ElasticClient.Search[T,TResult](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 61
-   在 Nest.ElasticClient.Search[T](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 55
-   在 Micro.Es6.Service.MainRCJournalInfoService.FactSearcher(QueryContainer Query) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\MainRCJournalInfoService.cs:行号 153
-   在 Micro.Mr_Wanter.MVC.Controllers.ES6Controller.Index(String queryString) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Mr_Wanter.MVC\Controllers\ES6Controller.cs:行号 38
-   在 lambda_method(Closure , ControllerBase , Object[] )
-   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
-   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
-   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
- ----------------------header-------------------------- 2018-04-16 14:33:44,721 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
- ----------------------header-------------------------- 2018-04-16 15:17:37,826 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
- ----------------------footer--------------------------  ----------------------header-------------------------- 2018-04-16 15:18:04,149 [7] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
- ----------------------header-------------------------- 2018-04-16 15:19:26,403 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
- ----------------------header-------------------------- 2018-04-16 15:25:45,483 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
- ----------------------header-------------------------- 2018-04-16 15:27:24,778 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
- ----------------------header-------------------------- 2018-04-16 15:31:09,912 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
- ----------------------header-------------------------- 2018-04-16 15:34:16,439 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
- ----------------------header-------------------------- 2018-04-16 15:35:49,719 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
- ----------------------footer--------------------------  ----------------------header-------------------------- 2018-04-16 15:52:54,597 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
-2018-04-16 15:53:10,100 [6] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[ES6] 的 action[index] 时产生异常
-Elasticsearch.Net.PipelineException: Failed sniffing cluster state. ---> System.AggregateException: 发生一个或多个错误。 ---> Elasticsearch.Net.PipelineException: An error occurred trying to read the response from the specified node.
-   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 325
-   --- 内部异常堆栈跟踪的结尾 ---
-   --- 内部异常堆栈跟踪的结尾 ---
-   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 340
-   在 Elasticsearch.Net.RequestPipeline.FirstPoolUsage(SemaphoreSlim semaphore) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 133
-   在 Elasticsearch.Net.Transport`1.Request[TReturn](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Transport.cs:行号 53
-   在 Elasticsearch.Net.ElasticLowLevelClient.DoRequest[T](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.cs:行号 58
-   在 Elasticsearch.Net.ElasticLowLevelClient.Search[T](String index, String type, PostData`1 body, Func`2 requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.Generated.cs:行号 6838
-   在 Nest.LowLevelDispatch.SearchDispatch[T](IRequest`1 p, PostData`1 body) 位置 C:\code\elasticsearch-net\src\Nest\_Generated\_LowLevelDispatch.generated.cs:行号 2573
-   在 Nest.ElasticClient.<>c__DisplayClass521_0`2.<Search>b__0(ISearchRequest p, PostData`1 d) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 73
-   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 responseGenerator, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 56
-   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 46
-   在 Nest.ElasticClient.Search[T,TResult](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 71
-   在 Nest.ElasticClient.Search[T](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 65
-   在 Nest.ElasticClient.Search[T,TResult](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 61
-   在 Nest.ElasticClient.Search[T](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 55
-   在 Micro.Es6.Service.MainRCJournalInfoService.FactSearcher(QueryContainer Query) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\MainRCJournalInfoService.cs:行号 153
-   在 Micro.Mr_Wanter.MVC.Controllers.ES6Controller.Index(String queryString) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Mr_Wanter.MVC\Controllers\ES6Controller.cs:行号 38
-   在 lambda_method(Closure , ControllerBase , Object[] )
-   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
-   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
-   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
-2018-04-16 15:56:09,204 [13] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[ES6] 的 action[index] 时产生异常
-Elasticsearch.Net.PipelineException: Failed sniffing cluster state. ---> System.AggregateException: 发生一个或多个错误。 ---> Elasticsearch.Net.PipelineException: An error occurred trying to read the response from the specified node.
-   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 325
-   --- 内部异常堆栈跟踪的结尾 ---
-   --- 内部异常堆栈跟踪的结尾 ---
-   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 340
-   在 Elasticsearch.Net.RequestPipeline.FirstPoolUsage(SemaphoreSlim semaphore) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 133
-   在 Elasticsearch.Net.Transport`1.Request[TReturn](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Transport.cs:行号 53
-   在 Elasticsearch.Net.ElasticLowLevelClient.DoRequest[T](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.cs:行号 58
-   在 Elasticsearch.Net.ElasticLowLevelClient.Search[T](String index, String type, PostData`1 body, Func`2 requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.Generated.cs:行号 6838
-   在 Nest.LowLevelDispatch.SearchDispatch[T](IRequest`1 p, PostData`1 body) 位置 C:\code\elasticsearch-net\src\Nest\_Generated\_LowLevelDispatch.generated.cs:行号 2573
-   在 Nest.ElasticClient.<>c__DisplayClass521_0`2.<Search>b__0(ISearchRequest p, PostData`1 d) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 73
-   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 responseGenerator, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 56
-   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 46
-   在 Nest.ElasticClient.Search[T,TResult](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 71
-   在 Nest.ElasticClient.Search[T](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 65
-   在 Nest.ElasticClient.Search[T,TResult](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 61
-   在 Nest.ElasticClient.Search[T](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 55
-   在 Micro.Es6.Service.MainRCJournalInfoService.FactSearcher(QueryContainer Query) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\MainRCJournalInfoService.cs:行号 153
-   在 Micro.Mr_Wanter.MVC.Controllers.ES6Controller.Index(String queryString) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Mr_Wanter.MVC\Controllers\ES6Controller.cs:行号 38
-   在 lambda_method(Closure , ControllerBase , Object[] )
-   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
-   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
-   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
-2018-04-16 15:59:11,149 [16] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[ES6] 的 action[index] 时产生异常
-Elasticsearch.Net.PipelineException: Failed sniffing cluster state. ---> System.AggregateException: 发生一个或多个错误。 ---> Elasticsearch.Net.PipelineException: An error occurred trying to read the response from the specified node.
-   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 325
-   --- 内部异常堆栈跟踪的结尾 ---
-   --- 内部异常堆栈跟踪的结尾 ---
-   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 340
-   在 Elasticsearch.Net.RequestPipeline.FirstPoolUsage(SemaphoreSlim semaphore) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 133
-   在 Elasticsearch.Net.Transport`1.Request[TReturn](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Transport.cs:行号 53
-   在 Elasticsearch.Net.ElasticLowLevelClient.DoRequest[T](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.cs:行号 58
-   在 Elasticsearch.Net.ElasticLowLevelClient.Search[T](String index, String type, PostData`1 body, Func`2 requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.Generated.cs:行号 6838
-   在 Nest.LowLevelDispatch.SearchDispatch[T](IRequest`1 p, PostData`1 body) 位置 C:\code\elasticsearch-net\src\Nest\_Generated\_LowLevelDispatch.generated.cs:行号 2573
-   在 Nest.ElasticClient.<>c__DisplayClass521_0`2.<Search>b__0(ISearchRequest p, PostData`1 d) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 73
-   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 responseGenerator, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 56
-   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 46
-   在 Nest.ElasticClient.Search[T,TResult](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 71
-   在 Nest.ElasticClient.Search[T](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 65
-   在 Nest.ElasticClient.Search[T,TResult](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 61
-   在 Nest.ElasticClient.Search[T](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 55
-   在 Micro.Es6.Service.MainRCJournalInfoService.FactSearcher(QueryContainer Query) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\MainRCJournalInfoService.cs:行号 153
-   在 Micro.Mr_Wanter.MVC.Controllers.ES6Controller.Index(String queryString) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Mr_Wanter.MVC\Controllers\ES6Controller.cs:行号 38
-   在 lambda_method(Closure , ControllerBase , Object[] )
-   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
-   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
-   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
-2018-04-16 16:00:58,389 [16] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[ES6] 的 action[index] 时产生异常
-Elasticsearch.Net.PipelineException: Failed sniffing cluster state. ---> System.AggregateException: 发生一个或多个错误。 ---> Elasticsearch.Net.PipelineException: An error occurred trying to read the response from the specified node.
-   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 325
-   --- 内部异常堆栈跟踪的结尾 ---
-   --- 内部异常堆栈跟踪的结尾 ---
-   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 340
-   在 Elasticsearch.Net.RequestPipeline.FirstPoolUsage(SemaphoreSlim semaphore) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 133
-   在 Elasticsearch.Net.Transport`1.Request[TReturn](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Transport.cs:行号 53
-   在 Elasticsearch.Net.ElasticLowLevelClient.DoRequest[T](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.cs:行号 58
-   在 Elasticsearch.Net.ElasticLowLevelClient.Search[T](String index, String type, PostData`1 body, Func`2 requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.Generated.cs:行号 6838
-   在 Nest.LowLevelDispatch.SearchDispatch[T](IRequest`1 p, PostData`1 body) 位置 C:\code\elasticsearch-net\src\Nest\_Generated\_LowLevelDispatch.generated.cs:行号 2573
-   在 Nest.ElasticClient.<>c__DisplayClass521_0`2.<Search>b__0(ISearchRequest p, PostData`1 d) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 73
-   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 responseGenerator, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 56
-   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 46
-   在 Nest.ElasticClient.Search[T,TResult](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 71
-   在 Nest.ElasticClient.Search[T](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 65
-   在 Nest.ElasticClient.Search[T,TResult](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 61
-   在 Nest.ElasticClient.Search[T](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 55
-   在 Micro.Es6.Service.MainRCJournalInfoService.FactSearcher(QueryContainer Query) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\MainRCJournalInfoService.cs:行号 153
-   在 Micro.Mr_Wanter.MVC.Controllers.ES6Controller.Index(String queryString) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Mr_Wanter.MVC\Controllers\ES6Controller.cs:行号 38
-   在 lambda_method(Closure , ControllerBase , Object[] )
-   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
-   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
-   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
-2018-04-16 16:02:28,289 [11] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[ES6] 的 action[index] 时产生异常
-Elasticsearch.Net.PipelineException: Failed sniffing cluster state. ---> System.AggregateException: 发生一个或多个错误。 ---> Elasticsearch.Net.PipelineException: An error occurred trying to read the response from the specified node.
-   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 325
-   --- 内部异常堆栈跟踪的结尾 ---
-   --- 内部异常堆栈跟踪的结尾 ---
-   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 340
-   在 Elasticsearch.Net.RequestPipeline.FirstPoolUsage(SemaphoreSlim semaphore) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 133
-   在 Elasticsearch.Net.Transport`1.Request[TReturn](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Transport.cs:行号 53
-   在 Elasticsearch.Net.ElasticLowLevelClient.DoRequest[T](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.cs:行号 58
-   在 Elasticsearch.Net.ElasticLowLevelClient.Search[T](String index, String type, PostData`1 body, Func`2 requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.Generated.cs:行号 6838
-   在 Nest.LowLevelDispatch.SearchDispatch[T](IRequest`1 p, PostData`1 body) 位置 C:\code\elasticsearch-net\src\Nest\_Generated\_LowLevelDispatch.generated.cs:行号 2573
-   在 Nest.ElasticClient.<>c__DisplayClass521_0`2.<Search>b__0(ISearchRequest p, PostData`1 d) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 73
-   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 responseGenerator, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 56
-   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 46
-   在 Nest.ElasticClient.Search[T,TResult](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 71
-   在 Nest.ElasticClient.Search[T](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 65
-   在 Nest.ElasticClient.Search[T,TResult](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 61
-   在 Nest.ElasticClient.Search[T](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 55
-   在 Micro.Es6.Service.MainRCJournalInfoService.FactSearcher(QueryContainer Query) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\MainRCJournalInfoService.cs:行号 153
-   在 Micro.Mr_Wanter.MVC.Controllers.ES6Controller.Index(String queryString) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Mr_Wanter.MVC\Controllers\ES6Controller.cs:行号 38
-   在 lambda_method(Closure , ControllerBase , Object[] )
-   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
-   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
-   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
-2018-04-16 16:02:40,432 [16] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[ES6] 的 action[index] 时产生异常
-Elasticsearch.Net.PipelineException: Failed sniffing cluster state. ---> System.AggregateException: 发生一个或多个错误。 ---> Elasticsearch.Net.PipelineException: An error occurred trying to read the response from the specified node.
-   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 325
-   --- 内部异常堆栈跟踪的结尾 ---
-   --- 内部异常堆栈跟踪的结尾 ---
-   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 340
-   在 Elasticsearch.Net.RequestPipeline.FirstPoolUsage(SemaphoreSlim semaphore) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 133
-   在 Elasticsearch.Net.Transport`1.Request[TReturn](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Transport.cs:行号 53
-   在 Elasticsearch.Net.ElasticLowLevelClient.DoRequest[T](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.cs:行号 58
-   在 Elasticsearch.Net.ElasticLowLevelClient.Search[T](String index, String type, PostData`1 body, Func`2 requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.Generated.cs:行号 6838
-   在 Nest.LowLevelDispatch.SearchDispatch[T](IRequest`1 p, PostData`1 body) 位置 C:\code\elasticsearch-net\src\Nest\_Generated\_LowLevelDispatch.generated.cs:行号 2573
-   在 Nest.ElasticClient.<>c__DisplayClass521_0`2.<Search>b__0(ISearchRequest p, PostData`1 d) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 73
-   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 responseGenerator, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 56
-   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 46
-   在 Nest.ElasticClient.Search[T,TResult](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 71
-   在 Nest.ElasticClient.Search[T](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 65
-   在 Nest.ElasticClient.Search[T,TResult](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 61
-   在 Nest.ElasticClient.Search[T](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 55
-   在 Micro.Es6.Service.MainRCJournalInfoService.FactSearcher(QueryContainer Query) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\MainRCJournalInfoService.cs:行号 153
-   在 Micro.Mr_Wanter.MVC.Controllers.ES6Controller.Index(String queryString) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Mr_Wanter.MVC\Controllers\ES6Controller.cs:行号 38
-   在 lambda_method(Closure , ControllerBase , Object[] )
-   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
-   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
-   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
-2018-04-16 16:03:12,946 [16] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[ES6] 的 action[index] 时产生异常
-Elasticsearch.Net.PipelineException: Failed sniffing cluster state. ---> System.AggregateException: 发生一个或多个错误。 ---> Elasticsearch.Net.PipelineException: An error occurred trying to read the response from the specified node.
-   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 325
-   --- 内部异常堆栈跟踪的结尾 ---
-   --- 内部异常堆栈跟踪的结尾 ---
-   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 340
-   在 Elasticsearch.Net.RequestPipeline.FirstPoolUsage(SemaphoreSlim semaphore) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 133
-   在 Elasticsearch.Net.Transport`1.Request[TReturn](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Transport.cs:行号 53
-   在 Elasticsearch.Net.ElasticLowLevelClient.DoRequest[T](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.cs:行号 58
-   在 Elasticsearch.Net.ElasticLowLevelClient.Search[T](String index, String type, PostData`1 body, Func`2 requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.Generated.cs:行号 6838
-   在 Nest.LowLevelDispatch.SearchDispatch[T](IRequest`1 p, PostData`1 body) 位置 C:\code\elasticsearch-net\src\Nest\_Generated\_LowLevelDispatch.generated.cs:行号 2573
-   在 Nest.ElasticClient.<>c__DisplayClass521_0`2.<Search>b__0(ISearchRequest p, PostData`1 d) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 73
-   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 responseGenerator, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 56
-   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 46
-   在 Nest.ElasticClient.Search[T,TResult](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 71
-   在 Nest.ElasticClient.Search[T](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 65
-   在 Nest.ElasticClient.Search[T,TResult](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 61
-   在 Nest.ElasticClient.Search[T](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 55
-   在 Micro.Es6.Service.MainRCJournalInfoService.FactSearcher(QueryContainer Query) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\MainRCJournalInfoService.cs:行号 153
-   在 Micro.Mr_Wanter.MVC.Controllers.ES6Controller.Index(String queryString) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Mr_Wanter.MVC\Controllers\ES6Controller.cs:行号 38
-   在 lambda_method(Closure , ControllerBase , Object[] )
-   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
-   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
-   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
-   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
- ----------------------footer--------------------------  ----------------------header-------------------------- 2018-04-16 16:23:25,920 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
- ----------------------header-------------------------- 2018-04-16 16:32:09,639 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
- ----------------------header-------------------------- 2018-04-16 16:41:54,605 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
- ----------------------header-------------------------- 2018-04-16 16:43:15,370 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
- ----------------------header-------------------------- 2018-04-16 16:50:48,339 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
- ----------------------header-------------------------- 2018-04-16 16:53:05,485 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
-2018-04-16 16:53:53,838 [13] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[ES6] 的 action[GetData] 时产生异常
+ ----------------------header-------------------------- 2018-04-17 08:48:14,286 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 08:49:23,759 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+2018-04-17 08:51:42,694 [7] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[ES6] 的 action[GetData] 时产生异常
 System.NullReferenceException: 未将对象引用设置到对象的实例。
    在 Micro.Es6.Service.BaseService`1.PageCount2(ElasticClient client, String Query, SearchDescriptor`1 query) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\BaseService.cs:行号 69
    在 Micro.Es6.Service.MainRCJournalInfoService.PageResultSearcher2(String queryString, Int32 pageIndex, Int32 pageSize) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\MainRCJournalInfoService.cs:行号 135
@@ -396,7 +58,7 @@ System.NullReferenceException: 未将对象引用设置到对象的实例。
    在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
    在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
    在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
-2018-04-16 16:53:57,242 [14] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[ES6] 的 action[GetData] 时产生异常
+2018-04-17 08:51:46,393 [6] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[ES6] 的 action[GetData] 时产生异常
 System.NullReferenceException: 未将对象引用设置到对象的实例。
    在 Micro.Es6.Service.BaseService`1.PageCount2(ElasticClient client, String Query, SearchDescriptor`1 query) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\BaseService.cs:行号 69
    在 Micro.Es6.Service.MainRCJournalInfoService.PageResultSearcher2(String queryString, Int32 pageIndex, Int32 pageSize) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\MainRCJournalInfoService.cs:行号 135
@@ -417,3 +79,79 @@ System.NullReferenceException: 未将对象引用设置到对象的实例。
    在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
    在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
    在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+ ----------------------header-------------------------- 2018-04-17 08:52:25,934 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+2018-04-17 08:53:14,175 [5] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[ES6] 的 action[index] 时产生异常
+Elasticsearch.Net.PipelineException: Failed sniffing cluster state. ---> System.AggregateException: 发生一个或多个错误。 ---> Elasticsearch.Net.PipelineException: An error occurred trying to read the response from the specified node.
+   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 325
+   --- 内部异常堆栈跟踪的结尾 ---
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Elasticsearch.Net.RequestPipeline.Sniff() 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 340
+   在 Elasticsearch.Net.RequestPipeline.FirstPoolUsage(SemaphoreSlim semaphore) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Pipeline\RequestPipeline.cs:行号 133
+   在 Elasticsearch.Net.Transport`1.Request[TReturn](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\Transport\Transport.cs:行号 53
+   在 Elasticsearch.Net.ElasticLowLevelClient.DoRequest[T](HttpMethod method, String path, PostData`1 data, IRequestParameters requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.cs:行号 58
+   在 Elasticsearch.Net.ElasticLowLevelClient.Search[T](String index, String type, PostData`1 body, Func`2 requestParameters) 位置 C:\code\elasticsearch-net\src\Elasticsearch.Net\ElasticLowLevelClient.Generated.cs:行号 6838
+   在 Nest.LowLevelDispatch.SearchDispatch[T](IRequest`1 p, PostData`1 body) 位置 C:\code\elasticsearch-net\src\Nest\_Generated\_LowLevelDispatch.generated.cs:行号 2573
+   在 Nest.ElasticClient.<>c__DisplayClass521_0`2.<Search>b__0(ISearchRequest p, PostData`1 d) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 73
+   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 responseGenerator, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 56
+   在 Nest.ElasticClient.Nest.IHighLevelToLowLevelDispatcher.Dispatch[TRequest,TQueryString,TResponse](TRequest request, Func`3 dispatch) 位置 C:\code\elasticsearch-net\src\Nest\ElasticClient.cs:行号 46
+   在 Nest.ElasticClient.Search[T,TResult](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 71
+   在 Nest.ElasticClient.Search[T](ISearchRequest request) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 65
+   在 Nest.ElasticClient.Search[T,TResult](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 61
+   在 Nest.ElasticClient.Search[T](Func`2 selector) 位置 C:\code\elasticsearch-net\src\Nest\Search\Search\ElasticClient-Search.cs:行号 55
+   在 Micro.Es6.Service.MainRCJournalInfoService.FactSearcher(QueryContainer Query) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Es6.Service\MainRCJournalInfoService.cs:行号 153
+   在 Micro.Mr_Wanter.MVC.Controllers.ES6Controller.Index(String queryString) 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Mr_Wanter.MVC\Controllers\ES6Controller.cs:行号 38
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+ ----------------------header-------------------------- 2018-04-17 08:56:49,096 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 09:00:19,821 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 09:02:06,908 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 09:03:38,762 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------footer--------------------------  ----------------------header-------------------------- 2018-04-17 09:16:46,057 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------footer--------------------------  ----------------------header-------------------------- 2018-04-17 09:18:13,183 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------footer--------------------------  ----------------------header-------------------------- 2018-04-17 09:18:56,121 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+2018-04-17 09:19:17,169 [6] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[Home] 的 action[Index] 时产生异常
+System.ComponentModel.Win32Exception (0x80004005): 系统找不到指定的文件。
+   在 System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   在 System.Diagnostics.Process.Start()
+   在 Micro.Wanter.Common.Helper.ExcuteBat.Bat() 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Wanter.Common\Helper\ExcuteBat.cs:行号 28
+   在 Micro.Mr_Wanter.MVC.Controllers.HomeController.Index() 位置 D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Mr_Wanter.MVC\Controllers\HomeController.cs:行号 24
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+ ----------------------header-------------------------- 2018-04-17 09:20:37,795 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 09:22:45,503 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 09:24:55,134 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 09:26:00,931 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 09:28:01,430 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 09:29:17,926 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 09:30:22,150 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 09:31:06,882 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 09:31:49,790 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 09:36:50,385 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
