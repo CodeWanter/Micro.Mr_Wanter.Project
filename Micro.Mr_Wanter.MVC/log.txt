@@ -155,3 +155,7 @@ System.ComponentModel.Win32Exception (0x80004005): 系统找不到指定的文件。
  ----------------------header-------------------------- 2018-04-17 09:31:06,882 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
  ----------------------header-------------------------- 2018-04-17 09:31:49,790 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
  ----------------------header-------------------------- 2018-04-17 09:36:50,385 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 13:40:16,480 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 14:34:29,967 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 14:35:54,845 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-17 14:38:53,523 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
