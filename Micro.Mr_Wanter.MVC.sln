@@ -37,6 +37,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.Es6.Model", "Micro.Es
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.Sql.Service", "Micro.Sql.Service\Micro.Sql.Service.csproj", "{76D0884F-34FA-491E-86F7-B2D783B10C52}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{3DF0FF9F-28BF-49EF-A032-9DD762683F3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.Mr_Wanter.API", "Micro.Mr_Wanter.API\Micro.Mr_Wanter.API.csproj", "{1F25DCD7-7769-416E-9C61-8EDC5FAEF070}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +95,10 @@ Global
 		{76D0884F-34FA-491E-86F7-B2D783B10C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76D0884F-34FA-491E-86F7-B2D783B10C52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76D0884F-34FA-491E-86F7-B2D783B10C52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F25DCD7-7769-416E-9C61-8EDC5FAEF070}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F25DCD7-7769-416E-9C61-8EDC5FAEF070}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F25DCD7-7769-416E-9C61-8EDC5FAEF070}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F25DCD7-7769-416E-9C61-8EDC5FAEF070}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,6 +116,7 @@ Global
 		{99674E68-68DA-404D-9E85-099A78F7925A} = {7507239A-8A4F-4302-943A-D34E921CD96A}
 		{04D382E5-9DD2-4A23-99CF-7109B042F92A} = {7507239A-8A4F-4302-943A-D34E921CD96A}
 		{76D0884F-34FA-491E-86F7-B2D783B10C52} = {7507239A-8A4F-4302-943A-D34E921CD96A}
+		{1F25DCD7-7769-416E-9C61-8EDC5FAEF070} = {3DF0FF9F-28BF-49EF-A032-9DD762683F3C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3DA7A23-0BDB-48E1-9FF0-09CAAC2F625E}

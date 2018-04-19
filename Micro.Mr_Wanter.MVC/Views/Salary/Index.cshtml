@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
-
+@using Micro.Wanter.Model;
 <link href="~/Scripts/Plugin/pagination_zh/lib/pagination.css" rel="stylesheet" />
 <link href="~/Scripts/Plugin/layui-v2.2.5/layui/css/layui.css" rel="stylesheet" />
 <style type="text/css">
@@ -29,6 +29,7 @@
 </div>
 <a href="/Salary/Create" class="layui-btn layui-btn-normal">Create</a>
 <a href="/Salary/ExportToExcel" class="layui-btn layui-btn-normal">ExportToExcel</a>
+@Html.Hidden("userid",((S_User)Context.Session["CurrentUser"]).id,new { id= "userid" })
 <div class="floatright">
     <span title="实发合计"><i>@ViewBag.FinalSalary￥</i></span>/<span title="应发合计"><i>@ViewBag.TotalSalary￥</i></span>
 </div>
@@ -76,8 +77,12 @@
             PaginationInit(pageIndex, pageSize);
         });
 
+        layui.use('layer', function () {
+            var $ = layui.jquery, layer = layui.layer;
+        });
+
         function PaginationInit(pageIndex, pageSize) {
-            $.post("/Salary/GetSalary", { "pageIndex": pageIndex, "pageSize": pageSize }, function (data) {
+            $.get("http://localhost:22854//api/salary/GetSalary", {"userid":$("#userid").val(), "pageIndex": pageIndex, "pageSize": pageSize }, function (data) {
                 // 创建分页
                 $("#Pagination").pagination(data.TotalCount, {
                     num_edge_entries: 1, //边缘页数
@@ -93,9 +98,9 @@
 
         function paginationCallback(pageIndex, jq) {
             $.ajax({
-                type: "POST",
-                url: "/Salary/GetSalary",
-                data: { "pageIndex": pageIndex, "pageSize": pageSize },
+                type: "Get",
+                url: "http://localhost:22854//api/salary/GetSalary",
+                data: {"userid":$("#userid").val(), "pageIndex": pageIndex, "pageSize": pageSize },
                 dataType: "json",
                 async: true,
                 beforeSend: function () {
@@ -109,14 +114,10 @@
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                     alert('error...状态文本值：' + textStatus + " 异常信息：" + errorThrown);
-                    layer.msg('保存异常!');
+                    layer.msg('查询异常!');
                 }
             });
         }
-
-        layui.use('layer', function () {
-            var $ = layui.jquery, layer = layui.layer;
-        });
 
         function Edit(id) {
             parent.layer.open({
@@ -149,7 +150,7 @@
 
             });
         }
-   
+
         $.views.converters("getDate", function (SalaryTime) {
             var date = new Date(parseInt(SalaryTime.slice(6)));
             var result = date.Format("yyyy-MM-dd");

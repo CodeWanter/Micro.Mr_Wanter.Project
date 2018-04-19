@@ -52,11 +52,13 @@ namespace Micro.Wanter.Common.Helper
             process.Dispose();
         }
 
-        public static void BatWithDos(string targetDir, string fileName)
+        public static void BatWithDos()
         {
             Process proc = null;
             try
             {
+                string targetDir = ConfigurationManager.AppSettings["targetDir"];
+                string fileName = ConfigurationManager.AppSettings["fileName"];
                 //string targetDir = string.Format(@"D:\工作\elasticsearch\elasticsearch-2.4.2\bin");//this is where mybatch.bat lies
                 proc = new Process();
                 proc.StartInfo.WorkingDirectory = targetDir;
