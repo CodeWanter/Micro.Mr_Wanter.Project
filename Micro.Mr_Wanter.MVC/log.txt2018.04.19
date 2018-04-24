@@ -1,0 +1,36 @@
+ ----------------------header-------------------------- 2018-04-19 11:11:17,666 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+2018-04-19 11:13:00,393 [5] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[Salary] 的 action[index] 时产生异常
+System.Web.HttpCompileException (0x80004005): D:\工作\NetCode\Micro.Mr_Wanter.Project\Micro.Mr_Wanter.MVC\Views\Salary\index.cshtml(32): error CS1012: Too many characters in character literal
+   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   在 System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+ ----------------------header-------------------------- 2018-04-19 11:29:05,572 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-19 11:29:17,331 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-19 11:33:39,269 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-19 11:39:17,193 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-19 13:16:16,171 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------footer--------------------------  ----------------------footer--------------------------  ----------------------header-------------------------- 2018-04-19 13:18:24,293 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-19 13:18:43,158 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------footer--------------------------  ----------------------header-------------------------- 2018-04-19 13:20:52,739 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-19 13:22:41,899 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-19 14:04:44,989 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------footer--------------------------  ----------------------header-------------------------- 2018-04-19 14:52:33,446 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------footer--------------------------  ----------------------header-------------------------- 2018-04-19 14:59:42,773 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-19 15:04:02,488 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-19 15:11:04,669 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-19 15:21:00,721 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------footer-------------------------- 

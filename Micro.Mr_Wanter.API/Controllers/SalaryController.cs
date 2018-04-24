@@ -28,7 +28,7 @@ namespace Micro.Mr_Wanter.API.Controllers
         //[EnableCors(origins: "http://localhost:8002/Salary/index", headers: "*", methods: "GET,POST,PUT,DELETE")]
         public PageResult<Salary> GetSalary(int userid,int pageIndex = 0, int pageSize = 10)
         {
-            //S_User user = HttpContext.Current.Session["CurrentUser"] as S_User;
+            
             PageResult<Salary> list = salaryService.GetResList<Salary, DateTime>(o => o.SalaryTime, o => o.UserId == userid, pageIndex * pageSize, pageSize, false);
             return list;
         }
@@ -43,7 +43,7 @@ namespace Micro.Mr_Wanter.API.Controllers
         }
 
         [HttpPost]
-        public Salary de(int id)
+        public Salary detail(int id)
         {
             Salary salary = salaryService.FindById<Salary>(id);
             return salary;
