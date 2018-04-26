@@ -62,10 +62,10 @@ namespace Micro.Mr_Wanter.MVC.Controllers
             if (currentUser != null)
             {
                 //用户数据插入redis
-                using (RedisHashService service = new RedisHashService())
-                {
-                    service.SetEntryInHash("user", currentUser.id.ToString(), JsonConvert.SerializeObject(currentUser));
-                };
+                //using (RedisHashService service = new RedisHashService())
+                //{
+                //    service.SetEntryInHash("user", currentUser.id.ToString(), JsonConvert.SerializeObject(currentUser));
+                //};
                 if (loginkeeping != null)
                 {
                     HttpCookie cookie = new HttpCookie("_token");
