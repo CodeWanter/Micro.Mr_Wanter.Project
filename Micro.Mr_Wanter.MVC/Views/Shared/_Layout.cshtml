@@ -28,6 +28,7 @@
                                 <li><a href="/Static/Index">statistics</a></li>
                                 <li><a href="/Home/Contact">Elastic1</a></li>
                                 <li><a href="/ES6/index">Elastic2</a></li>
+                                <li><a href="/Chart/index">Chart</a></li>
                                 <li><a href="~/Html/Mark.html" target="_blank">Mark</a></li>
                             </ul>
                         </div>
@@ -35,10 +36,10 @@
                     <div class="col-md-2 col-sm-3 col-xs-9">
                         @Html.Partial("_LoginPartial")
                     </div>
-                        <div class="col-sm-1 clear col-xs-3 hidden-md hidden-lg">
-                            <div class="responsive-menu-wrap floatright"></div>
-                        </div>
+                    <div class="col-sm-1 clear col-xs-3 hidden-md hidden-lg">
+                        <div class="responsive-menu-wrap floatright"></div>
                     </div>
+                </div>
             </div>
         </div>
     </header>
@@ -62,5 +63,6 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
 </body>
 </html>

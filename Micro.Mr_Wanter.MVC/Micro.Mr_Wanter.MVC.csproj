@@ -65,16 +65,40 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.3\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.3\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Nest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
       <HintPath>..\packages\NEST.2.4.2\lib\net46\Nest.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
@@ -212,6 +236,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\ES6Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SalaryController.cs" />
@@ -229,6 +254,8 @@
     <Compile Include="Scripts\Plugin\layui-v2.2.5\layui\server\editimgup.ashx.cs">
       <DependentUpon>editimgup.ashx</DependentUpon>
     </Compile>
+    <Compile Include="SignalR\UserHub.cs" />
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\assets\css\animate.css" />
@@ -322,6 +349,8 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.3.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.3.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -540,6 +569,301 @@
     <Content Include="Scripts\Plugin\highcharts\themes\skies.src.js" />
     <Content Include="Scripts\Plugin\highcharts\themes\sunset.js" />
     <Content Include="Scripts\Plugin\highcharts\themes\sunset.src.js" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\css\index.css" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\css\jquery.emoji.css" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\1.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\10.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\11.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\12.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\13.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\14.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\15.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\16.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\17.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\18.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\19.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\2.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\20.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\21.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\22.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\23.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\24.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\25.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\26.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\27.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\28.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\29.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\3.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\30.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\31.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\32.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\33.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\34.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\35.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\36.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\37.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\38.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\39.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\4.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\40.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\41.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\42.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\43.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\44.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\45.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\46.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\47.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\48.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\49.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\5.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\50.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\51.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\52.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\53.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\54.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\55.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\56.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\57.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\58.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\59.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\6.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\60.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\61.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\62.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\63.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\64.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\65.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\66.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\67.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\68.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\69.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\7.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\70.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\71.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\72.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\73.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\74.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\75.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\76.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\77.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\78.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\79.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\8.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\80.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\81.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\82.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\83.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\84.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\85.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\86.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\87.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\88.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\89.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\9.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\90.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\qq\91.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\1.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\10.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\11.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\12.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\13.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\14.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\15.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\16.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\17.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\18.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\19.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\2.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\20.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\21.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\22.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\23.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\24.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\25.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\26.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\27.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\28.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\29.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\3.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\30.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\31.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\32.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\33.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\34.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\35.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\36.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\37.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\38.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\39.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\4.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\40.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\41.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\42.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\43.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\44.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\45.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\46.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\47.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\48.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\49.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\5.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\50.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\6.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\7.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\8.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\img\tieba\9.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\dist\js\jquery.emoji.min.js" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\lib\css\bootstrap.css" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\lib\css\jquery.mCustomScrollbar.min.css" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\lib\css\railscasts.css" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\lib\script\highlight.pack.js" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\lib\script\jquery.mCustomScrollbar.min.js" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\lib\script\jquery.min.js" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\lib\script\jquery.mousewheel-3.0.6.min.js" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\css\index.css" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\css\jquery.emoji.css" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\1.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\10.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\11.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\12.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\13.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\14.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\15.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\16.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\17.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\18.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\19.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\2.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\20.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\21.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\22.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\23.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\24.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\25.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\26.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\27.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\28.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\29.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\3.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\30.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\31.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\32.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\33.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\34.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\35.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\36.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\37.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\38.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\39.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\4.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\40.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\41.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\42.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\43.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\44.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\45.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\46.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\47.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\48.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\49.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\5.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\50.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\51.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\52.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\53.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\54.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\55.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\56.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\57.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\58.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\59.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\6.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\60.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\61.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\62.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\63.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\64.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\65.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\66.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\67.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\68.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\69.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\7.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\70.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\71.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\72.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\73.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\74.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\75.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\76.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\77.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\78.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\79.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\8.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\80.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\81.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\82.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\83.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\84.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\85.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\86.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\87.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\88.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\89.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\9.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\90.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\qq\91.gif" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\1.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\10.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\11.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\12.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\13.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\14.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\15.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\16.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\17.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\18.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\19.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\2.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\20.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\21.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\22.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\23.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\24.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\25.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\26.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\27.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\28.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\29.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\3.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\30.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\31.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\32.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\33.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\34.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\35.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\36.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\37.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\38.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\39.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\4.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\40.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\41.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\42.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\43.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\44.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\45.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\46.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\47.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\48.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\49.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\5.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\50.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\6.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\7.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\8.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\img\tieba\9.jpg" />
+    <Content Include="Scripts\Plugin\jQuery-emoji\src\js\jquery.emoji.js" />
     <Content Include="Scripts\Plugin\jsrender.js" />
     <Content Include="Scripts\Plugin\jsrender.min.js" />
     <Content Include="Scripts\Plugin\kindeditor-4.1.10\kindeditor-all-min.js" />
@@ -981,6 +1305,7 @@
     <Content Include="Views\ES6\Create.cshtml" />
     <Content Include="Views\ES6\Detail.cshtml" />
     <Content Include="Views\ES6\Edit.cshtml" />
+    <Content Include="Views\Chart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1001,6 +1326,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\学习\MS.NET\软谋\20180110Nosql-Redis-队列\20180110Advanced10Course25Redis\MyRedis\Ruanmou.Redis\Ruanmou.Redis.csproj">
+      <Project>{3DE757B1-4BE7-48E9-BF44-585AAC801D0F}</Project>
+      <Name>Ruanmou.Redis</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Micor.Remote.Interface\Micor.Remote.Interface.csproj">
       <Project>{8634f0a2-1a75-4df0-9c11-6072a975fefc}</Project>
       <Name>Micor.Remote.Interface</Name>

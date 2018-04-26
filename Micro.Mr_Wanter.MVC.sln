@@ -41,6 +41,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{3DF0FF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.Mr_Wanter.API", "Micro.Mr_Wanter.API\Micro.Mr_Wanter.API.csproj", "{1F25DCD7-7769-416E-9C61-8EDC5FAEF070}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Redis", "Redis", "{882C0D05-013F-4405-8750-C6527EAF1E59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ruanmou.Redis", "..\..\..\学习\MS.NET\软谋\20180110Nosql-Redis-队列\20180110Advanced10Course25Redis\MyRedis\Ruanmou.Redis\Ruanmou.Redis.csproj", "{3DE757B1-4BE7-48E9-BF44-585AAC801D0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -151,6 +155,14 @@ Global
 		{1F25DCD7-7769-416E-9C61-8EDC5FAEF070}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1F25DCD7-7769-416E-9C61-8EDC5FAEF070}.Release|x86.ActiveCfg = Release|x86
 		{1F25DCD7-7769-416E-9C61-8EDC5FAEF070}.Release|x86.Build.0 = Release|x86
+		{3DE757B1-4BE7-48E9-BF44-585AAC801D0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DE757B1-4BE7-48E9-BF44-585AAC801D0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DE757B1-4BE7-48E9-BF44-585AAC801D0F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3DE757B1-4BE7-48E9-BF44-585AAC801D0F}.Debug|x86.Build.0 = Debug|Any CPU
+		{3DE757B1-4BE7-48E9-BF44-585AAC801D0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DE757B1-4BE7-48E9-BF44-585AAC801D0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DE757B1-4BE7-48E9-BF44-585AAC801D0F}.Release|x86.ActiveCfg = Release|Any CPU
+		{3DE757B1-4BE7-48E9-BF44-585AAC801D0F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -169,6 +181,7 @@ Global
 		{04D382E5-9DD2-4A23-99CF-7109B042F92A} = {7507239A-8A4F-4302-943A-D34E921CD96A}
 		{76D0884F-34FA-491E-86F7-B2D783B10C52} = {7507239A-8A4F-4302-943A-D34E921CD96A}
 		{1F25DCD7-7769-416E-9C61-8EDC5FAEF070} = {3DF0FF9F-28BF-49EF-A032-9DD762683F3C}
+		{3DE757B1-4BE7-48E9-BF44-585AAC801D0F} = {882C0D05-013F-4405-8750-C6527EAF1E59}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3DA7A23-0BDB-48E1-9FF0-09CAAC2F625E}

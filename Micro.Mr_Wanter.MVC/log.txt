@@ -1,1 +1,36 @@
- ----------------------header-------------------------- 2018-04-24 09:21:41,646 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-26 08:23:43,361 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-26 08:59:48,746 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-26 09:14:04,724 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-26 09:34:30,288 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+2018-04-26 09:35:55,947 [5] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[Chart] 的 action[ChartIfamre] 时产生异常
+System.Web.HttpRequestValidationException (0x80004005): 从客户端(name="<a href=")中检测到有潜在危险的 Request.QueryString 值。
+   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 System.Web.HttpRequest.<>c__DisplayClass280_0.<ValidateHttpValueCollection>b__0(String key, String value)
+   在 System.Web.HttpValueCollection.EnsureKeyValidated(String key)
+   在 System.Web.HttpValueCollection.GetValues(String name)
+   在 System.Web.Mvc.NameValueCollectionValueProvider.ValueProviderResultPlaceholder.GetResultFromCollection(String key, NameValueCollection collection, CultureInfo culture)
+   在 System.Web.Mvc.NameValueCollectionValueProvider.GetValue(String key, Boolean skipValidation)
+   在 System.Web.Mvc.ValueProviderCollection.GetValue(String key, Boolean skipValidation)
+   在 System.Web.Mvc.DefaultModelBinder.BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValue(ControllerContext controllerContext, ParameterDescriptor parameterDescriptor)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValues(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+2018-04-26 09:36:33,336 [5] ERROR Micro.Wanter.Common.Filter.LogExceptionFilter - 在执行 controller[Chart] 的 action[ChartIfamre] 时产生异常
+System.Web.HttpRequestValidationException (0x80004005): 从客户端(name="<a href=")中检测到有潜在危险的 Request.QueryString 值。
+   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 System.Web.HttpRequest.<>c__DisplayClass280_0.<ValidateHttpValueCollection>b__0(String key, String value)
+   在 System.Web.HttpValueCollection.EnsureKeyValidated(String key)
+   在 System.Web.HttpValueCollection.GetValues(String name)
+   在 System.Web.Mvc.NameValueCollectionValueProvider.ValueProviderResultPlaceholder.GetResultFromCollection(String key, NameValueCollection collection, CultureInfo culture)
+   在 System.Web.Mvc.NameValueCollectionValueProvider.GetValue(String key, Boolean skipValidation)
+   在 System.Web.Mvc.ValueProviderCollection.GetValue(String key, Boolean skipValidation)
+   在 System.Web.Mvc.DefaultModelBinder.BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValue(ControllerContext controllerContext, ParameterDescriptor parameterDescriptor)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValues(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+ ----------------------header-------------------------- 2018-04-26 09:37:40,438 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------footer--------------------------  ----------------------header-------------------------- 2018-04-26 09:42:19,376 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-26 09:49:36,837 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------footer--------------------------  ----------------------header-------------------------- 2018-04-26 10:18:47,004 [82] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-26 10:30:43,809 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块
+ ----------------------header-------------------------- 2018-04-26 10:39:00,619 [1] INFO  Micro.Wanter.Common.Log.Logger - 系统初始化Logger模块

@@ -3,6 +3,7 @@ using Micro.Wanter.Common.VerifyHelper;
 using Micro.Wanter.Interface;
 using Micro.Wanter.Model;
 using Newtonsoft.Json;
+using Ruanmou.Redis.Service;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -60,13 +61,19 @@ namespace Micro.Mr_Wanter.MVC.Controllers
             S_User currentUser = _iUserService.GetEntity<S_User>(l => l.UserName == userName && l.Password == psw);
             if (currentUser != null)
             {
+                //用户数据插入redis
+                using (RedisHashService service = new RedisHashService())
+                {
+                    service.SetEntryInHash("user", currentUser.id.ToString(), JsonConvert.SerializeObject(currentUser));
+                };
                 if (loginkeeping != null)
                 {
                     HttpCookie cookie = new HttpCookie("_token");
                     cookie.Values.Add("name", JsonConvert.SerializeObject(currentUser));
                     cookie.Expires = DateTime.Now.AddYears(2);
                     Response.Cookies.Add(cookie);
-                }else
+                }
+                else
                 {
                     HttpContext.Response.Cookies["_token"].Expires = DateTime.Now.AddDays(-1);
                 }
@@ -85,21 +92,21 @@ namespace Micro.Mr_Wanter.MVC.Controllers
             else
             {
                 ModelState.AddModelError("failed", "密码不正确");
-                return View(new S_User() { UserName=userName});
+                return View(new S_User() { UserName = userName });
             }
         }
 
         public Boolean CheckUserName(string usernamesignup)
         {
-          return   _iUserService.CheckUserName(usernamesignup);
+            return _iUserService.CheckUserName(usernamesignup);
         }
 
-        public ActionResult Register(string usernamesignup,string passwordsignup)
+        public ActionResult Register(string usernamesignup, string passwordsignup)
         {
             S_User user = new S_User()
             {
                 UserName = usernamesignup,
-                Password = DEncrypt.Encrypt(passwordsignup, "zhang")  ,
+                Password = DEncrypt.Encrypt(passwordsignup, "zhang"),
                 CreateTime = DateTime.Now
             };
             _iUserService.AddEntity(user);
